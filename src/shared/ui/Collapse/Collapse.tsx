@@ -27,13 +27,13 @@ export const Collapse = ({ title, children, icon }: CollapseProps) => {
             src={icon}
             alt={title}
           />
-          <h2
+          <h3
             className={cx(styles.title, {
               [styles.titleCollapsed]: !isCollapsed,
             })}
           >
             {title}
-          </h2>
+          </h3>
         </div>
         <button className={styles.button}>
           <span className={styles.iconBtnContainer}>

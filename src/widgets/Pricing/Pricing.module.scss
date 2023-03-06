@@ -1,0 +1,53 @@
+.container {
+  box-shadow: 0 0 0 100vmax var(--dark);
+  clip-path: inset(0 -100vmax);
+  background: var(--dark);
+  padding: 75px 0 120px;
+}
+
+.info {
+  margin-top: 36px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.time {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18.83px;
+  line-height: 26px;
+}
+
+.minPrice {
+  display: block;
+  margin-top: 118px;
+  font-family: "DRAB", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 66px;
+}
+
+.price {
+  display: block;
+  margin-top: 63px;
+  font-family: "DRAB", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 110px;
+  line-height: 121px;
+  color: #B3FF01;
+}
+
+.light {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.textShort {
+  max-width: 373px;
+}
+
+.textLong {
+  max-width: 493px;
+}

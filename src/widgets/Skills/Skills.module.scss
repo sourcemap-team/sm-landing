@@ -1,0 +1,27 @@
+.skills {
+  margin-top: 24px;
+}
+
+.skill {
+  box-sizing: border-box;
+  max-width: 230px;
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  background: #F6F6F6;
+  min-height: 236px;
+}
+
+.primary {
+  background: var(--primary) !important;
+}
+
+.tags {
+  margin-top: 41px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+

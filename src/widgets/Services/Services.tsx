@@ -7,7 +7,7 @@ export const Services = () => {
   return (
     <div className={styles.container}>
       <h2 className="title">Services</h2>
-      <Collapse title="Web Apps" icon="/icons/planet.svg">
+      <Collapse title="Web Apps" icon="/icons/services/planet.svg">
         <p>
           One of the priorities of our team. We develop services from simple web
           applications to highly loaded banking systems. We install a convenient

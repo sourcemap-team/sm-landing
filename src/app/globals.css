@@ -14,8 +14,9 @@
     --dark: #080808;
     --primary: #B3FF01;
     --misc: #D8D8D8;
-    --font-light: #FFFFF;
+    --font-light: #FFFFFF;
     --font-dark: rgba(8, 8, 8, 0.6);
+    --white: #FFFFFF;
 }
 
 .title  {
@@ -27,7 +28,7 @@
     color: var(--dark);
 }
 
-h2 {
+h3 {
     font-style: normal;
     font-weight: 400;
     font-size: 31px;
@@ -74,6 +75,7 @@ a {
     font-size: 31px;
     line-height: 43px;
     color: var(--dark);
+    cursor: pointer;
 }
 
 a:hover {
@@ -81,6 +83,6 @@ a:hover {
 }
 
 
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6, p, span {
     user-select: none;
 }

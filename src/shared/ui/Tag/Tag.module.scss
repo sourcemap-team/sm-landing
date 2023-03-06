@@ -1,0 +1,10 @@
+.tag {
+  display: flex;
+  align-items: center;
+  width: min-content;
+  box-sizing: border-box;
+  padding: 7px 12px;
+  background: var(--white);
+  border: 1px solid var(--misc);
+  border-radius: 36px;
+}

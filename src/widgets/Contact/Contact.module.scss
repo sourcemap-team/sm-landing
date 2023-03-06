@@ -1,0 +1,76 @@
+.text {
+  margin: 39px 0 30px;
+  max-width: 710px;
+}
+
+.contacts {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 670px;
+  margin: 0 auto 50px;
+  gap: 150px;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile {
+  width: 243px;
+  height: 243px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.role {
+  margin: 10px 0 15px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.socialLink {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid #E8E8E8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s all;
+
+  &:hover {
+    background: var(--primary);
+  }
+}
+
+.link {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 31px;
+  line-height: 43px;
+  color: var(--dark);
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.copy {
+  margin-top: 50px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18.83px;
+  line-height: 26px;
+  color: #6B6B6B;
+}
