@@ -1,29 +1,55 @@
-.container {
-  padding: 21px 0 50px;
+.cardWrapper {
+  box-sizing: border-box;
+  height: 130px;
+  padding-top: 32px;
+  transition: 0.4s all ease-in-out;
+  cursor: pointer;
   border-top: 1px solid var(--misc);
   min-height: 130px;
-}
-
-.info {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
 
   &:hover {
-    .button {
-      background: var(--primary);
+    .titleIcon {
+      opacity: 1;
     }
 
     .icon {
-      width: auto !important;
-      opacity: 1 !important;
+      width: auto;
+      opacity: 1;
+      margin-right: 16px;
     }
 
-    .title {
-      margin-left: 16px;
+    .button {
+      background: var(--primary);
     }
   }
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  transition: 0.2s all ease-in-out;
+  width: 0;
+  opacity: 0;
+}
+
+.iconCollapsed {
+  width: auto;
+  opacity: 1;
+  margin-right: 16px;
+  color: var(--dark);
+}
+
+.title {
+  transition: 0.2s all ease-in-out;
 }
 
 .button {
@@ -35,63 +61,58 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.3s background-color;
+  transition: 0.2s background-color;
 
   &:active {
     background: var(--dark);
   }
 }
 
-.title {
-  transition: 0.3s all;
-}
-
-.titleCollapsed {
-  margin-left: 16px;
-}
-
-.iconBtnContainer {
-  display: flex;
-  width: 18px;
-  height: 16px;
-}
-
 .iconBtn {
   user-select: none;
   max-width: 100%;
   height: 16px;
-  transition: 0.3s transform;
+  transition: 0.2s transform;
 }
 
 .iconBtnCollapsed {
   transform: rotateX(180deg);
 }
 
-.collapsed {
-  height: auto !important;
-  opacity: 1 !important;
-  margin-top: 35px;
-}
-
-.content {
-  height: 0;
-  opacity: 0;
-  transition: 0.3s all ease-in-out;
-  max-width: 905px;
-}
-
-.left {
+.contentWrapper {
   display: flex;
-  align-items: center;
-}
-
-.icon {
-  width: 0;
   opacity: 0;
-  transition: 0.3s all ease-in-out;
+  transition: 0.2s all ease-in-out;
+  animation: hideContent 250ms ease-out;
+  font-size: 20px;
+  line-height: 29px;
+  padding: 50px 0;
 }
 
-.iconCollapsed {
-  width: auto !important;
-  opacity: 1 !important;
+.showContent {
+  opacity: 1;
+  animation: showContent 0.3s ease-in;
+}
+
+.expandCard {
+  min-height: 130px;
+  height: 100%;
+}
+
+@keyframes showContent {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hideContent {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }

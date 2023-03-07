@@ -5,3 +5,4 @@ export { Pricing } from './Pricing/Pricing';
 export { Skills } from './Skills/Skills';
 export { Activity } from './Activity/Activity';
 export { Contact } from './Contact/Contact';
+export { Layout } from './Layout/Layout';

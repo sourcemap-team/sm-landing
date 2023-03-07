@@ -26,7 +26,7 @@ export const Pricing = () => {
             client&apos;s processes, provide transparent reports on the work
             done, and always guarantee the result.
           </p>
-          <span className={styles.price}>$50/hour</span>
+          <span className={styles.price}>$45/hour</span>
           <p className={cx(styles.time, styles.light)}>
             Over 100 hours per month
           </p>

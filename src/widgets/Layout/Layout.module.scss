@@ -1,0 +1,62 @@
+.container {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 30px 0;
+}
+
+.menu {
+  position: fixed;
+  padding: 0 0 0 64px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.link {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 23px;
+}
+
+.action {
+  position: fixed;
+  top: 30px;
+  display: flex;
+  align-items: center;
+  max-width: inherit;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: flex-end;
+}
+
+.actionLink {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.button {
+  width: 60px;
+  height: 48px;
+  background: var(--primary);
+  border-radius: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 14px;
+    height: 17px;
+  }
+}
+
+.actionText {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 23px;
+}
