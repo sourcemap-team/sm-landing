@@ -59,7 +59,10 @@ export const Projects = () => {
           <div className={styles.left}>
             <div className={styles.info}>
               <div className={styles.infoText}>
-                <h3>{project.title}</h3>
+                <div className={styles.tablet}>
+                  <h3>{project.title}</h3>
+                  <h3 className={styles.dateTablet}>{project.date}</h3>
+                </div>
                 <p className={styles.text}>{project.about}</p>
                 <a className={styles.link} href={project.link} target="_blank">
                   <button className={styles.button}>

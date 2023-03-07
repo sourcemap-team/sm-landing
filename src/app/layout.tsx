@@ -1,4 +1,5 @@
-import './globals.css';
+import './globals.scss';
+import './variables.scss';
 
 import React from 'react';
 import { Manrope } from '@next/font/google';

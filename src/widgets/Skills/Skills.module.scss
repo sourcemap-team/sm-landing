@@ -1,7 +1,24 @@
+.container {
+  margin-top: 143px;
+
+  @media screen and (max-width: $desktop-m) {
+    margin-top: 75px;
+  }
+
+  @media screen and (max-width: $desktop-m) {
+    margin-top: 30px;
+  }
+}
+
 .skills {
   margin-top: 24px;
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
+
+  @media screen and (max-width: $tablet) {
+    gap: 15px;
+  }
 }
 
 .skill {
@@ -10,8 +27,14 @@
   width: 100%;
   padding: 15px;
   border-radius: 10px;
-  background: #F6F6F6;
+  background: #f6f6f6;
   min-height: 236px;
+
+  @media screen and (max-width: $tablet) {
+    width: 100%;
+    max-width: 100%;
+    min-height: 160px;
+  }
 }
 
 .primary {
@@ -25,5 +48,3 @@
   gap: 7px;
   flex-wrap: wrap;
 }
-
-

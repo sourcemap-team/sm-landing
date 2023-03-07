@@ -1,4 +1,10 @@
 .container {
   display: flex;
   flex-direction: column;
+  margin-top: 75px;
+  border-bottom: 1px solid var(--misc);
+
+  @media screen and (max-width: $tablet) {
+    margin-top: 30px;
+  }
 }

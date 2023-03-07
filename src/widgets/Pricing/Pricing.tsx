@@ -6,9 +6,7 @@ import cx from 'classnames';
 export const Pricing = () => {
   return (
     <div className={styles.container}>
-      <h2 className="title" style={{ color: '#FFF' }}>
-        Pricing
-      </h2>
+      <h2 className={cx('title', styles.title)}>Pricing</h2>
       <div className={styles.info}>
         <div className={styles.block}>
           <p className={cx(styles.light, styles.textShort)}>

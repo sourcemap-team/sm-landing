@@ -1,3 +1,11 @@
+.container {
+  margin-top: 75px;
+
+  @media screen and (max-width: $tablet) {
+    margin-top: 30px;
+  }
+}
+
 .title {
   margin-bottom: 25px;
 }
@@ -8,6 +16,12 @@
   gap: 20px;
   border-top: 1px solid var(--misc);
   padding: 25px 0;
+
+  @media screen and (max-width: $tablet) {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px 0 20px;
+  }
 }
 
 .info {
@@ -18,6 +32,10 @@
 .text {
   margin: 16px 0 30px;
   max-width: 350px;
+
+  @media screen and (max-width: $tablet) {
+    margin: 5px 0 10px;
+  }
 }
 
 .link {
@@ -25,6 +43,10 @@
   align-items: center;
   gap: 10px;
   margin-bottom: 43px;
+
+  @media screen and (max-width: $tablet) {
+    margin-bottom: 27px;
+  }
 }
 
 .button {
@@ -36,9 +58,19 @@
   align-items: center;
   justify-content: center;
 
+  @media screen and (max-width: $tablet) {
+    width: 35px;
+    height: 28px;
+  }
+
   img {
     width: 14px;
     height: 17px;
+
+    @media screen and (max-width: $tablet) {
+      width: 9px;
+      height: 8px;
+    }
   }
 }
 
@@ -61,6 +93,10 @@
   font-size: 31px;
   line-height: 43px;
   color: var(--misc);
+
+  @media screen and (max-width: $tablet) {
+    display: none;
+  }
 }
 
 .left {
@@ -72,4 +108,22 @@
 .img {
   width: 100%;
   height: 100%;
+}
+
+.tablet {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dateTablet {
+  display: none;
+
+  @media screen and (max-width: $tablet) {
+    display: flex;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+    color: var(--misc);
+  }
 }
