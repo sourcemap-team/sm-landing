@@ -20,7 +20,7 @@
 }
 
 .title {
-  color: #fff;
+  color: #ffffff !important;
 
   @media screen and (max-width: $desktop-m) {
     font-size: 80px;
@@ -44,17 +44,18 @@
   }
 
   @media screen and (max-width: $tablet) {
-    margin-top: 16px;
+    margin: 16px auto 0;
     gap: 10px;
     text-align: center;
     flex-direction: column;
+    max-width: 320px;
   }
 }
 
 .time {
   font-style: normal;
   font-weight: 400;
-  font-size: 18.83px;
+  font-size: 19px;
   line-height: 26px;
 }
 
@@ -66,9 +67,12 @@
   font-weight: 400;
   font-size: 60px;
   line-height: 66px;
+  color: rgba(255, 255, 255, 0.6);
 
   @media screen and (max-width: $tablet) {
-    display: none;
+    font-size: 40px;
+    line-height: 44px;
+    margin: 50px 0 0;
   }
 }
 
@@ -83,7 +87,9 @@
   color: #b3ff01;
 
   @media screen and (max-width: $tablet) {
-    display: none;
+    font-size: 55px;
+    line-height: 61px;
+    margin: 44px 0 5px;
   }
 }
 
@@ -93,8 +99,42 @@
 
 .textShort {
   max-width: 373px;
+  margin: 0 auto;
+
+  @media screen and (max-width: $tablet) {
+    max-width: 320px;
+  }
 }
 
 .textLong {
   max-width: 493px;
+  margin: 0 auto;
+
+  @media screen and (max-width: $tablet) {
+    max-width: 320px;
+  }
+}
+
+.text {
+  @media screen and (max-width: $tablet) {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+  }
+}
+
+.basicWidth {
+  @media screen and (max-width: $tablet) {
+    display: none;
+  }
+}
+
+.tabletWidth {
+  display: none;
+
+  @media screen and (max-width: $tablet) {
+    display: flex;
+    flex-direction: column;
+  }
 }
