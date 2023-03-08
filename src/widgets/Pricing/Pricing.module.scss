@@ -3,14 +3,8 @@
   clip-path: inset(0 -100vmax);
   background: var(--dark);
   padding: 75px 0 120px;
-  margin-top: 75px;
-
-  @media screen and (max-width: $desktop-m) {
-    margin-top: 81px;
-  }
 
   @media screen and (max-width: $tablet) {
-    margin-top: 30px;
     padding: 30px 10px;
     border-radius: 10px;
     box-shadow: none;

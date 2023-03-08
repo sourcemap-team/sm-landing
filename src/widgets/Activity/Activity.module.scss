@@ -1,3 +1,14 @@
+.container {
+  margin-bottom: 75px;
+
+  @media screen and (max-width: $desktop-m) {
+    margin-bottom: 81px;
+  }
+  @media screen and (max-width: $tablet) {
+    margin-top: 30px;
+  }
+}
+
 .text {
   margin: 50px 0 30px;
 
