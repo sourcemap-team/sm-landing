@@ -18,8 +18,10 @@ const Home = () => {
       <Hero />
       <Services />
       <Projects />
-      <Skills />
-      <Activity />
+      <div id="skills">
+        <Skills />
+        <Activity />
+      </div>
       <Pricing />
       <Contact />
     </main>

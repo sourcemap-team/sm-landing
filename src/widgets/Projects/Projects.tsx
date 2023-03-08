@@ -52,7 +52,7 @@ const PROJECTS_LIST = [
 
 export const Projects = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="projects">
       <h2 className={cx('title', styles.title)}>Projects</h2>
       {PROJECTS_LIST.map((project) => (
         <div key={project.title} className={styles.project}>

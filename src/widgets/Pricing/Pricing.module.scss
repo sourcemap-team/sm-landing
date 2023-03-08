@@ -20,7 +20,7 @@
 }
 
 .title {
-  color: #ffffff !important;
+  color: var(--white) !important;
 
   @media screen and (max-width: $desktop-m) {
     font-size: 80px;

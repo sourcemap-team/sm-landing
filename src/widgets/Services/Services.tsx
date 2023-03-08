@@ -29,7 +29,7 @@ const SERVICES_ITEMS = [
         solutions and, if necessary, select references.
       </p>
     ),
-    icon: '',
+    icon: '/icons/services/mobile.svg',
   },
   {
     title: 'Chat Bots',
@@ -41,7 +41,7 @@ const SERVICES_ITEMS = [
         more. Platforms: Telegram/What&apos;s App
       </p>
     ),
-    icon: '',
+    icon: '/icons/services/chat.svg',
   },
   {
     title: 'Chrome Extensions',
@@ -55,13 +55,13 @@ const SERVICES_ITEMS = [
         go to the product page because it is faster and easier.
       </p>
     ),
-    icon: '',
+    icon: '/icons/services/chrome.svg',
   },
 ];
 
 export const Services = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="services">
       <h2 className="title">Services</h2>
       {SERVICES_ITEMS.map((service) => (
         <Collapse key={service.title} title={service.title} icon={service.icon}>

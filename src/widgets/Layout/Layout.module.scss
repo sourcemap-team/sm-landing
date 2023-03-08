@@ -9,7 +9,7 @@
   max-width: 952px;
   margin: 0 auto;
   width: 100%;
-  padding: 30px 0 62px;
+  padding: 30px 0 50px;
 
   @media screen and (max-width: $desktop-m) {
     padding: 105px 10px 94px;
@@ -36,6 +36,7 @@
 }
 
 .link {
+  transition: 0.3s all;
   font-style: normal;
   font-weight: 700;
   font-size: 17px;
@@ -54,7 +55,7 @@
 
   @media screen and (max-width: $desktop-m) {
     top: 0;
-    background: #ffffff;
+    background: var(--white);
     padding: 13px 20px;
     justify-content: space-between;
   }
@@ -121,4 +122,12 @@
   @media screen and (max-width: $tablet) {
     max-width: 140px;
   }
+}
+
+.active {
+  color: var(--primary) !important;
+}
+
+.light {
+  color: var(--white);
 }

@@ -5,7 +5,7 @@ import cx from 'classnames';
 
 export const Pricing = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="pricing">
       <h2 className={cx('title', styles.title)}>Pricing</h2>
       <div className={styles.info}>
         <div className={styles.block}>
