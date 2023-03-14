@@ -44,7 +44,7 @@ export const Layout = ({ children }: { children: ReactNode }) => {
       <div className={styles.content}>{children}</div>
       <div className={styles.action}>
         <img className={styles.logo} src="/icons/logo-m.svg" alt="Sourcemap" />
-        <a href="" className={styles.actionLink}>
+        <a href="#contact" className={styles.actionLink}>
           <span
             className={cx(styles.actionText, {
               [styles.light]: activeId === 'pricing',

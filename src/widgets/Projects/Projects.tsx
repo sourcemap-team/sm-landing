@@ -11,7 +11,7 @@ const PROJECTS_LIST = [
     about: 'Frontend development of UX tool for web designers',
     link: 'https://app.flowmapp.com/login',
     date: '2023',
-    img: '/images/projects/flowmapp.jpg',
+    img: '/images/projects/flowmapp.png',
     tags: ['React', 'Webpack', 'CSS/SCSS', 'TypeScript'],
   },
   {
@@ -19,7 +19,7 @@ const PROJECTS_LIST = [
     about: 'Frontend and backend development for Cryptocurrency exchanger',
     link: 'https://connect.app/',
     date: '2023',
-    img: '/images/projects/connect.jpg',
+    img: '/images/projects/connect.png',
     tags: ['Kotlin', 'PostgreSQL', 'PWA', 'React', 'TypeScript'],
   },
   {
@@ -28,7 +28,7 @@ const PROJECTS_LIST = [
       'The complex development of all product components: Frontend, Backend, Devops, Chrome Extension',
     link: 'https://app.shortcast.io/signin',
     date: '2022',
-    img: '/images/projects/shortcast.jpg',
+    img: '/images/projects/shortcast.png',
     tags: ['React', 'Next JS', 'Node JS', 'Strapi'],
   },
   {
@@ -36,7 +36,7 @@ const PROJECTS_LIST = [
     about: 'Frontend and backend development of finance tracking app',
     link: 'https://app.feexle.com/sign-in',
     date: '2022',
-    img: '/images/projects/feexle.jpg',
+    img: '/images/projects/feexle.png',
     tags: ['Kotlin', 'Spring Boot', 'React', 'TypeScript'],
   },
   {
@@ -45,7 +45,7 @@ const PROJECTS_LIST = [
       'Development of Chrome Extension and frontend of web app for a fintech startup',
     link: 'https://app.investallocator.com/account/sign-in',
     date: '2021',
-    img: '/images/projects/ia.jpg',
+    img: '/images/projects/ia.png',
     tags: ['React', 'Chrome API', 'CSS', 'HTML'],
   },
 ];

@@ -70,6 +70,7 @@
   display: flex;
   align-items: center;
   gap: 15px;
+  padding-right: 30px;
 }
 
 .button {
@@ -131,4 +132,8 @@
 
 .light {
   color: var(--white);
+
+  @media screen and (max-width: $desktop-m) {
+    color: var(--dark);
+  }
 }

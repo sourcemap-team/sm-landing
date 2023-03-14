@@ -1,7 +1,13 @@
 .container {
   margin-top: 75px;
+  margin-bottom: 143px;
+
+  @media screen and (max-width: $desktop-m) {
+    margin-bottom: 75px;
+  }
 
   @media screen and (max-width: $tablet) {
+    margin-bottom: 30px;
     margin-top: 30px;
   }
 }
@@ -106,8 +112,13 @@
 }
 
 .img {
+  max-width: 466px;
   width: 100%;
   height: 100%;
+
+  @media screen and (max-width: $tablet) {
+    max-width: 100%;
+  }
 }
 
 .tablet {

@@ -11,7 +11,7 @@ export const metadata = {
 
 const manropeFont = Manrope({
   subsets: ['latin'],
-  weight: ['400'],
+  weight: ['400', '500', '700'],
 });
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {

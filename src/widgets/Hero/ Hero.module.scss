@@ -6,8 +6,9 @@
       rgba(0, 0, 0, 0.64) 100%
     ),
     linear-gradient(0deg, rgba(0, 0, 0, 0.21), rgba(0, 0, 0, 0.21)),
-    url('/images/hero.jpg');
+    url('/images/hero.png');
   background-repeat: no-repeat;
+  background-size: 952px auto;
   border-radius: 10px;
   min-height: 596px;
   width: 100%;
@@ -23,7 +24,7 @@
 }
 
 .logo {
-  max-width: 472px;
+  max-width: 598px;
   width: 100%;
 
   img {
@@ -39,12 +40,16 @@
 .info {
   margin-top: auto;
   font-size: 64px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 77px;
   letter-spacing: 0;
   text-align: left;
   color: var(--white);
   max-width: 685px;
+
+  @media screen and (max-width: $desktop-m) {
+    font-weight: 400;
+  }
 
   @media screen and (max-width: $tablet) {
     font-weight: 400;

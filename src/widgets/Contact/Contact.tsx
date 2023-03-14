@@ -6,7 +6,7 @@ const CONTACTS_LIST = [
   {
     name: 'Roman Babanov',
     role: 'CEO',
-    img: '/images/contacts/Roman.jpg',
+    img: '/images/contacts/Roman.png',
     links: [
       {
         icon: '/icons/socials/linkedin.svg',
@@ -28,7 +28,7 @@ const CONTACTS_LIST = [
   {
     name: 'Sergey Ogurechnikov',
     role: 'Business Developer',
-    img: '/images/contacts/Sergey.jpg',
+    img: '/images/contacts/Sergey.png',
     links: [
       {
         icon: '/icons/socials/linkedin.svg',
@@ -64,12 +64,15 @@ const LINKS = [
 
 export const Contact = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="contact">
       <h2 className="title">Contact Us</h2>
       <p className={styles.text}>
         If you want to discuss the project or just chat, write to us at
-        <a href="mailto:hello@sourcemap.pro"> hello@sourcemap.pro</a> or on the
-        social network
+        <a href="mailto:hello@sourcemap.pro" target="_blank">
+          {' '}
+          hello@sourcemap.pro
+        </a>{' '}
+        or on the social network
       </p>
       <div className={styles.contacts}>
         {CONTACTS_LIST.map((contact) => (
@@ -94,7 +97,11 @@ export const Contact = () => {
         ))}
       </div>
       <div className={styles.info}>
-        <a className={styles.link} href="mailto:hello@sourcemap.pro">
+        <a
+          className={styles.link}
+          href="mailto:hello@sourcemap.pro"
+          target="_blank"
+        >
           hello@sourcemap.pro
         </a>
         <div className={styles.links}>
