@@ -17,10 +17,10 @@ const SKILLS_LIST = [
     tags: [
       'Kotlin',
       'PostgresSQL',
-      'Spring Boot',
       'NodeJS',
-      'Hibernate',
       'Strapi',
+      'Spring Boot',
+      'Hibernate',
     ],
   },
   {

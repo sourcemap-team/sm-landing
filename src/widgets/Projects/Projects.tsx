@@ -79,9 +79,7 @@ export const Projects = () => {
               ))}
             </div>
           </div>
-          <div className={styles.right}>
-            <img src={project.img} alt={project.title} className={styles.img} />
-          </div>
+          <img src={project.img} alt={project.title} className={styles.img} />
         </div>
       ))}
     </div>

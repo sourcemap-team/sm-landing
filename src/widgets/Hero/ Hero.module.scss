@@ -21,6 +21,12 @@
     min-height: 450px;
     padding: 20px 15px;
   }
+
+  @media screen and (min-width: $desktop-xl) {
+    padding: 55px 75px;
+    background-size: auto;
+    min-height: 935px;
+  }
 }
 
 .logo {

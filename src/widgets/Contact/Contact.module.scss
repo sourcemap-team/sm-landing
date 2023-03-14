@@ -50,6 +50,12 @@
     gap: 10px;
     margin-bottom: 18px;
   }
+
+  @media screen and (min-width: $desktop-xl) {
+    gap: 310px;
+    max-width: 100%;
+    padding: 0 250px;
+  }
 }
 
 .contact {

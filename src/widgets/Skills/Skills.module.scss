@@ -10,11 +10,15 @@
   @media screen and (max-width: $tablet) {
     gap: 15px;
   }
+
+  @media screen and (min-width: $desktop-xl) {
+    gap: 20px;
+  }
 }
 
 .skill {
   box-sizing: border-box;
-  max-width: 230px;
+  max-width: 250px;
   width: 100%;
   padding: 15px;
   border-radius: 10px;
@@ -25,6 +29,11 @@
     width: 100%;
     max-width: 100%;
     min-height: 160px;
+  }
+
+  @media screen and (min-width: $desktop-xl) {
+    max-width: 350px;
+    min-height: 203px;
   }
 }
 

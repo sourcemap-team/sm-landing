@@ -20,6 +20,7 @@
   box-sizing: border-box;
   display: flex;
   gap: 20px;
+  justify-content: space-between;
   border-top: 1px solid var(--misc);
   padding: 25px 0;
 
@@ -33,6 +34,10 @@
 .info {
   display: flex;
   gap: 40px;
+
+  @media screen and (min-width: $desktop-xl) {
+    gap: 265px;
+  }
 }
 
 .text {
@@ -41,6 +46,10 @@
 
   @media screen and (max-width: $tablet) {
     margin: 5px 0 10px;
+  }
+
+  @media screen and (min-width: $desktop-xl) {
+    max-width: 520px;
   }
 }
 
@@ -118,6 +127,10 @@
 
   @media screen and (max-width: $tablet) {
     max-width: 100%;
+  }
+
+  @media screen and (min-width: $desktop-xl) {
+    max-width: 609px;
   }
 }
 
