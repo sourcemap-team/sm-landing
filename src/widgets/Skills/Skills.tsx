@@ -4,6 +4,7 @@ import React from 'react';
 import cx from 'classnames';
 
 import { Tag } from '@/shared/ui';
+import { useRouter } from 'next/router';
 
 const SKILLS_LIST = [
   {
@@ -17,9 +18,9 @@ const SKILLS_LIST = [
     tags: [
       'Kotlin',
       'PostgresSQL',
-      'NodeJS',
-      'Strapi',
       'Spring Boot',
+      'Strapi',
+      'NodeJS',
       'Hibernate',
     ],
   },
@@ -35,10 +36,18 @@ const SKILLS_LIST = [
   },
 ];
 
+const SKILLS_TITLE: { [key: string]: string } = {
+  en: 'What we do',
+  ru: 'Что мы делаем',
+};
+
 export const Skills = () => {
+  const router = useRouter();
+  const lang: string = router.locale || '';
+
   return (
     <div className={styles.container}>
-      <h2 className="title">What we do</h2>
+      <h2 className="title">{SKILLS_TITLE[lang]}</h2>
       <div className={styles.skills}>
         {SKILLS_LIST.map((skill) => (
           <div

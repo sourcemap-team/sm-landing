@@ -51,7 +51,7 @@
   letter-spacing: 0;
   text-align: left;
   color: var(--white);
-  max-width: 685px;
+  max-width: 750px;
 
   @media screen and (max-width: $desktop-m) {
     font-weight: 400;
@@ -65,5 +65,6 @@
 }
 
 .dedicated {
+  display: inline-block;
   color: #b3ff01;
 }

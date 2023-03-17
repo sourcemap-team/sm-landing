@@ -1,89 +1,28 @@
 import styles from './Contact.module.scss';
 
 import React from 'react';
+import { useRouter } from 'next/router';
 
-const CONTACTS_LIST = [
-  {
-    name: 'Roman Babanov',
-    role: 'CEO',
-    img: '/images/contacts/Roman.png',
-    links: [
-      {
-        icon: '/icons/socials/linkedin.svg',
-        link: 'https://www.linkedin.com/in/roman-babanov/',
-        name: 'linkedin',
-      },
-      {
-        icon: '/icons/socials/telegram.svg',
-        link: 'https://t.me/c_o_o_n',
-        name: 'telegram',
-      },
-      {
-        icon: '/icons/socials/facebook.svg',
-        link: 'https://www.facebook.com/profile.php?id=100016170887764',
-        name: 'facebook',
-      },
-    ],
-  },
-  {
-    name: 'Sergey Ogurechnikov',
-    role: 'Business Developer',
-    img: '/images/contacts/Sergey.png',
-    links: [
-      {
-        icon: '/icons/socials/linkedin.svg',
-        link: 'https://www.linkedin.com/in/ogurechnikovsl/',
-        name: 'linkedin',
-      },
-      {
-        icon: '/icons/socials/telegram.svg',
-        link: 'https://t.me/ogurechnikov',
-        name: 'telegram',
-      },
-      {
-        icon: '/icons/socials/facebook.svg',
-        link: 'https://www.facebook.com/s.ogurechnikov',
-        name: 'facebook',
-      },
-    ],
-  },
-];
-
-const LINKS = [
-  {
-    icon: '/icons/socials/linkedin.svg',
-    link: 'https://www.linkedin.com/company/sourcemap-pro/',
-    name: 'linkedin',
-  },
-  {
-    icon: '/icons/socials/github.svg',
-    link: 'https://github.com/sourcemap-team',
-    name: 'github',
-  },
-];
+import { CONTACT_INFO, CONTACTS_LIST, LINKS } from './data';
 
 export const Contact = () => {
+  const router = useRouter();
+  const lang: string = router.locale || '';
+
   return (
     <div className={styles.container} id="contact">
-      <h2 className="title">Contact Us</h2>
-      <p className={styles.text}>
-        If you want to discuss the project or just chat, write to us at
-        <a href="mailto:hello@sourcemap.pro" target="_blank">
-          {' '}
-          hello@sourcemap.pro
-        </a>{' '}
-        or on the social network
-      </p>
+      <h2 className="title">{CONTACT_INFO.title[lang]}</h2>
+      <p className={styles.text}>{CONTACT_INFO.text[lang]}</p>
       <div className={styles.contacts}>
         {CONTACTS_LIST.map((contact) => (
-          <div key={contact.name} className={styles.contact}>
+          <div key={contact.name[lang]} className={styles.contact}>
             <img
               className={styles.profile}
               src={contact.img}
-              alt={contact.name}
+              alt={contact.name[lang]}
             />
-            <h3>{contact.name}</h3>
-            <p className={styles.role}>{contact.role}</p>
+            <h3>{contact.name[lang]}</h3>
+            <p className={styles.role}>{contact.role[lang]}</p>
             <div className={styles.links}>
               {contact.links.map(({ link, icon, name }) => (
                 <a key={name} href={link} target="_blank">

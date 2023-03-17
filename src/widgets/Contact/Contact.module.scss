@@ -40,10 +40,11 @@
 .contacts {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   max-width: 700px;
   margin: 0 auto 50px;
-  gap: 150px;
+  gap: 130px;
 
   @media screen and (max-width: $tablet) {
     max-width: 100%;

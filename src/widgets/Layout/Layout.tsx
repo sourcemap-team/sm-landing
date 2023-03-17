@@ -3,27 +3,74 @@
 import styles from './Layout.module.scss';
 
 import React, { ReactNode } from 'react';
-
-import { useScrollSpy } from '@/shared/hooks';
 import cx from 'classnames';
+import { Manrope } from '@next/font/google';
+import { useScrollSpy } from '@/shared/hooks';
+import { useRouter } from 'next/router';
 
-const MENU_ITEMS = [
-  { name: 'Services', link: '#services', id: 'services' },
-  { name: 'Projects', link: '#projects', id: 'projects' },
-  { name: 'What we do', link: '#skills', id: 'skills' },
-  { name: 'Pricing', link: '#pricing', id: 'pricing' },
+const manropeFont = Manrope({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+});
+
+type Menu = {
+  name: { [key: string]: string };
+  link: string;
+  id: string;
+};
+
+const MENU_ITEMS: Menu[] = [
+  {
+    name: {
+      en: 'Services',
+      ru: 'Услуги',
+    },
+    link: '#services',
+    id: 'services',
+  },
+  {
+    name: {
+      en: 'Projects',
+      ru: 'Проекты',
+    },
+    link: '#projects',
+    id: 'projects',
+  },
+  {
+    name: {
+      en: 'What we do',
+      ru: 'Что мы делаем',
+    },
+    link: '#skills',
+    id: 'skills',
+  },
+  {
+    name: {
+      en: 'Pricing',
+      ru: 'Cтоимость',
+    },
+    link: '#price',
+    id: 'pricing',
+  },
 ];
 
 const MENU_IDS = ['services', 'projects', 'skills', 'pricing'];
 
+const CONTACT_US: { [key: string]: string } = {
+  ru: 'Напиши нам',
+  en: 'Contact Us',
+};
+
 export const Layout = ({ children }: { children: ReactNode }) => {
   const activeId = useScrollSpy(MENU_IDS, 100);
+  const router = useRouter();
+  const lang: string = router.locale || '';
 
   return (
-    <div className={styles.container}>
+    <div className={cx(styles.container, manropeFont.className)}>
       <ul className={styles.menu}>
         {MENU_ITEMS.map((item) => (
-          <li key={item.name}>
+          <li key={item.name[lang]}>
             <a
               className={cx(
                 styles.link,
@@ -36,7 +83,7 @@ export const Layout = ({ children }: { children: ReactNode }) => {
               )}
               href={item.link}
             >
-              {item.name}
+              {item.name[lang]}
             </a>
           </li>
         ))}
@@ -50,7 +97,7 @@ export const Layout = ({ children }: { children: ReactNode }) => {
               [styles.light]: activeId === 'pricing',
             })}
           >
-            Contact Us
+            {CONTACT_US[lang]}
           </span>
           <button className={styles.button}>
             <img src="/icons/arrow-right.svg" alt="Arrow Right" />

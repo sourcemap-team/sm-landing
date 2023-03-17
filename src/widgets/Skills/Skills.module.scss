@@ -18,7 +18,7 @@
 
 .skill {
   box-sizing: border-box;
-  max-width: 250px;
+  max-width: 230px;
   width: 100%;
   padding: 15px;
   border-radius: 10px;
@@ -32,7 +32,7 @@
   }
 
   @media screen and (min-width: $desktop-xl) {
-    max-width: 350px;
+    max-width: 340px;
     min-height: 203px;
   }
 }
@@ -45,6 +45,6 @@
   margin-top: 41px;
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 5px;
   flex-wrap: wrap;
 }

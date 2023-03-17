@@ -11,9 +11,14 @@ type TagProps = {
 export const Tag = ({ children, primary = false, className }: TagProps) => {
   return (
     <span
-      className={cx(styles.tag, className, {
-        [styles.primary]: primary,
-      })}
+      className={cx(
+        styles.tag,
+        className,
+        {
+          [styles.primary]: primary,
+        },
+        'tag'
+      )}
     >
       {children}
     </span>

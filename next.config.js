@@ -1,13 +1,13 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { i18n } = require('./next-i18next.config');
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
+  i18n,
   sassOptions: {
-    includePaths: [path.join(__dirname, 'src', 'app')],
+    includePaths: [path.join(__dirname, 'src', 'app', 'styles')],
     prependData: `@import "variables.scss";`,
   },
 };

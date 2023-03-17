@@ -22,9 +22,17 @@
   flex-wrap: wrap;
   gap: 37px 20px;
   align-items: center;
+  justify-content: center;
 
   @media screen and (max-width: $tablet) {
     gap: 20px;
+  }
+
+  @media screen and (min-width: $desktop-xl) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
   }
 }
 

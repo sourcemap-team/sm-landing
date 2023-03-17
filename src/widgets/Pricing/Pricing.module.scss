@@ -30,7 +30,6 @@
 .info {
   margin-top: 36px;
   display: flex;
-  align-items: center;
   gap: 32px;
 
   @media screen and (max-width: $desktop-m) {
@@ -97,7 +96,6 @@
 
 .textShort {
   max-width: 373px;
-  margin: 0 auto;
 
   @media screen and (max-width: $tablet) {
     max-width: 320px;
@@ -106,7 +104,6 @@
 
 .textLong {
   max-width: 493px;
-  margin: 0 auto;
 
   @media screen and (max-width: $tablet) {
     max-width: 320px;

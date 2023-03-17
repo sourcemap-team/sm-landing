@@ -2,58 +2,40 @@ import styles from './Projects.module.scss';
 
 import React from 'react';
 import cx from 'classnames';
+import { useRouter } from 'next/router';
 
 import { Tag } from '@/shared/ui';
 
-const PROJECTS_LIST = [
-  {
-    title: 'FlowMapp',
-    about: 'Frontend development of UX tool for web designers',
-    link: 'https://app.flowmapp.com/login',
-    date: '2023',
-    img: '/images/projects/flowmapp.png',
-    tags: ['React', 'Webpack', 'CSS/SCSS', 'TypeScript'],
-  },
-  {
-    title: 'Connect',
-    about: 'Frontend and backend development for Cryptocurrency exchanger',
-    link: 'https://connect.app/',
-    date: '2023',
-    img: '/images/projects/connect.png',
-    tags: ['Kotlin', 'PostgreSQL', 'PWA', 'React', 'TypeScript'],
-  },
-  {
-    title: 'ShortCast',
-    about:
-      'The complex development of all product components: Frontend, Backend, Devops, Chrome Extension',
-    link: 'https://app.shortcast.io/signin',
-    date: '2022',
-    img: '/images/projects/shortcast.png',
-    tags: ['React', 'Next JS', 'Node JS', 'Strapi'],
-  },
-  {
-    title: 'Feexle',
-    about: 'Frontend and backend development of finance tracking app',
-    link: 'https://app.feexle.com/sign-in',
-    date: '2022',
-    img: '/images/projects/feexle.png',
-    tags: ['Kotlin', 'Spring Boot', 'React', 'TypeScript'],
-  },
-  {
-    title: 'Invest Allocator',
-    about:
-      'Development of Chrome Extension and frontend of web app for a fintech startup',
-    link: 'https://app.investallocator.com/account/sign-in',
-    date: '2021',
-    img: '/images/projects/ia.png',
-    tags: ['React', 'Chrome API', 'CSS', 'HTML'],
-  },
-];
+import { PROJECTS_LIST } from './data';
 
+type Additions = {
+  title: {
+    [key: string]: string;
+  };
+  linkText: {
+    [key: string]: string;
+  };
+};
+
+const PROJECTS_ADDITIONS: Additions = {
+  title: {
+    en: 'Projects',
+    ru: 'Проекты',
+  },
+  linkText: {
+    en: 'View result',
+    ru: 'Смотреть',
+  },
+};
 export const Projects = () => {
+  const router = useRouter();
+  const lang: string = router.locale || '';
+
   return (
     <div className={styles.container} id="projects">
-      <h2 className={cx('title', styles.title)}>Projects</h2>
+      <h2 className={cx('title', styles.title)}>
+        {PROJECTS_ADDITIONS.title[lang]}
+      </h2>
       {PROJECTS_LIST.map((project) => (
         <div key={project.title} className={styles.project}>
           <div className={styles.left}>
@@ -63,12 +45,14 @@ export const Projects = () => {
                   <h3>{project.title}</h3>
                   <h3 className={styles.dateTablet}>{project.date}</h3>
                 </div>
-                <p className={styles.text}>{project.about}</p>
+                <p className={styles.text}>{project.about[lang]}</p>
                 <a className={styles.link} href={project.link} target="_blank">
                   <button className={styles.button}>
                     <img src="/icons/arrow-right.svg" alt="Arrow Right" />
                   </button>
-                  <span className={styles.linkText}>View result</span>
+                  <span className={styles.linkText}>
+                    {PROJECTS_ADDITIONS.linkText[lang]}
+                  </span>
                 </a>
               </div>
               <h3 className={styles.date}>{project.date}</h3>
