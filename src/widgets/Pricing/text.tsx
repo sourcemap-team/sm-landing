@@ -1,3 +1,6 @@
+import { ReactNode } from 'react';
+import styles from './Pricing.module.scss';
+
 type Pricing = {
   title: {
     [key: string]: string;
@@ -10,7 +13,7 @@ type Pricing = {
       [key: string]: string;
     };
     price: {
-      [key: string]: string;
+      [key: string]: ReactNode;
     };
   };
   fullPrice: {
@@ -21,7 +24,7 @@ type Pricing = {
       [key: string]: string;
     };
     price: {
-      [key: string]: string;
+      [key: string]: ReactNode;
     };
   };
 };
@@ -41,8 +44,15 @@ const PRICING_TEXT: Pricing = {
       en: 'Up to 100 hours per month',
     },
     price: {
-      ru: '3500₽/час',
-      en: '$50/hour',
+      ru: (
+        <>
+          3500
+          <span className={styles.priceChar}>
+            <span className={styles.rub}>&#8381;</span>/час
+          </span>
+        </>
+      ),
+      en: <>$50/hour</>,
     },
   },
   fullPrice: {
@@ -55,8 +65,15 @@ const PRICING_TEXT: Pricing = {
       en: 'Over 100 hours per month',
     },
     price: {
-      ru: '3000₽/час',
-      en: '$45/hour',
+      ru: (
+        <>
+          3000
+          <span className={styles.priceChar}>
+            <span className={styles.rub}>&#8381;</span>/час
+          </span>
+        </>
+      ),
+      en: <>45/hour</>,
     },
   },
 };
