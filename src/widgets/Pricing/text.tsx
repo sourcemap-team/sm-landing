@@ -48,7 +48,7 @@ const PRICING_TEXT: Pricing = {
         <>
           3500
           <span className={styles.priceChar}>
-            <span className={styles.rub}>&#8381;</span>/час
+            <span className={styles.rub}>Р</span>/час
           </span>
         </>
       ),
@@ -69,11 +69,11 @@ const PRICING_TEXT: Pricing = {
         <>
           3000
           <span className={styles.priceChar}>
-            <span className={styles.rub}>&#8381;</span>/час
+            <span className={styles.rub}>Р</span>/час
           </span>
         </>
       ),
-      en: <>45/hour</>,
+      en: <>$45/hour</>,
     },
   },
 };

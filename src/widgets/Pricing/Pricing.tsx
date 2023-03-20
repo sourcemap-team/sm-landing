@@ -20,9 +20,9 @@ export const Pricing = () => {
             {PRICING_TEXT.lowPrice.text[lang]}
           </p>
           <div className={styles.basicWidth}>
-            <div className={cx(styles.minPrice, styles.light)}>
+            <p className={cx(styles.minPrice, styles.light)}>
               {PRICING_TEXT.lowPrice.price[lang]}
-            </div>
+            </p>
             <p className={cx(styles.time, styles.light)}>
               {PRICING_TEXT.lowPrice.time[lang]}
             </p>
@@ -33,16 +33,14 @@ export const Pricing = () => {
             {PRICING_TEXT.fullPrice.text[lang]}
           </p>
           <div className={styles.tabletWidth}>
-            <div className={cx(styles.minPrice, styles.light)}>
+            <p className={cx(styles.minPrice, styles.light)}>
               {PRICING_TEXT.lowPrice.price[lang]}
-            </div>
+            </p>
             <p className={cx(styles.time, styles.light)}>
               {PRICING_TEXT.lowPrice.time[lang]}
             </p>
           </div>
-          <div className={styles.price}>
-            {PRICING_TEXT.fullPrice.price[lang]}
-          </div>
+          <p className={styles.price}>{PRICING_TEXT.fullPrice.price[lang]}</p>
           <p className={cx(styles.time, styles.light, styles.timeFullPrice)}>
             {PRICING_TEXT.fullPrice.time[lang]}
           </p>

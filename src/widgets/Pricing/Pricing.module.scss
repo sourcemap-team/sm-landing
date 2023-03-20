@@ -41,7 +41,7 @@
     gap: 10px;
     text-align: center;
     flex-direction: column;
-    max-width: 320px;
+    max-width: 340px;
   }
 
   @media screen and (min-width: $desktop-xl) {
@@ -55,13 +55,11 @@
   font-weight: 400;
   font-size: 19px;
   line-height: 26px;
-
-  @media screen and (min-width: $desktop-xl) {
-    margin-top: 22px;
-  }
+  margin-top: 33px;
 }
 
 .minPrice {
+  height: 55px;
   display: block;
   margin-top: 118px;
   font-family: 'DRAB', sans-serif;
@@ -73,13 +71,8 @@
 
   .rub {
     text-transform: none;
-    font-size: 45px;
-    line-height: 50px;
-
-    @media screen and (max-width: $tablet) {
-      font-size: 45px;
-      line-height: 50px;
-    }
+    font-size: 42px;
+    line-height: 46px;
   }
 
   .priceChar {
@@ -89,6 +82,7 @@
   }
 
   @media screen and (max-width: $tablet) {
+    height: auto;
     font-size: 60px;
     line-height: 66px;
     margin: 50px 0 0;
@@ -100,7 +94,8 @@
 }
 
 .price {
-  margin-top: 63px;
+  height: 100px;
+  margin-top: 73px;
   font-family: 'DRAB', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -109,9 +104,14 @@
   color: #b3ff01;
 
   @media screen and (max-width: $tablet) {
-    font-size: 65px;
-    line-height: 72px;
+    height: auto;
+    font-size: 85px;
+    line-height: 94px;
     margin: 44px 0 5px;
+  }
+
+  @media screen and (min-width: $desktop-xl) {
+    margin-top: 69px;
   }
 }
 
@@ -160,8 +160,10 @@
 }
 
 .timeFullPrice {
+  margin-top: 35px;
+
   @media screen and (min-width: $desktop-xl) {
-    margin-top: 32px;
+    margin-top: 39px;
   }
 }
 
@@ -169,12 +171,12 @@
   text-transform: uppercase;
   font-family: 'DRAB', sans-serif;
   font-weight: 400;
-  font-size: 85px;
-  line-height: 85px;
+  font-size: 76px;
+  line-height: 84px;
 
   @media screen and (max-width: $tablet) {
-    font-size: 45px;
-    line-height: 50px;
+    font-size: 40px;
+    line-height: 44px;
   }
 }
 
