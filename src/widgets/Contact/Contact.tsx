@@ -53,7 +53,7 @@ export const Contact = () => {
           ))}
         </div>
       </div>
-      <p className={styles.copy}>© SourceMap </p>
+      <p className={styles.copy}>© Sourcemap </p>
     </div>
   );
 };
