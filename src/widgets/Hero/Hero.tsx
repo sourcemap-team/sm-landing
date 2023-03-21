@@ -13,7 +13,7 @@ const HERO_INFO: { [key: string]: ReactNode } = {
   ru: (
     <>
       Создаём <span className={styles.dedicated}>надёжные&nbsp;</span>
-      приложения используя&nbsp;
+      приложения, используя&nbsp;
       <span className={styles.dedicated}>передовые</span> технологии
     </>
   ),
