@@ -11,10 +11,10 @@ const App = ({ Component, pageProps }: AppProps) => {
   return (
     <Layout>
       <Head>
-        <title>Sourcemap.Pro</title>
+        <title>Sourcemap.pro</title>
         <meta
           property="og:title"
-          content="Sourcemap.Pro, outsource developer team"
+          content="Sourcemap.pro, outsource developer team"
           key="title"
         />
         <meta
