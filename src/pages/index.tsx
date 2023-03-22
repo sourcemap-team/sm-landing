@@ -36,7 +36,7 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Sourcemap.pro</title>
+        <title>{META.title[lang]}</title>
         <meta property="og:title" content={META.title[lang]} key="title" />
         <meta
           property="og:description"
