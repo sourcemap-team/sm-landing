@@ -43,6 +43,7 @@ const Home = () => {
           content={META.description[lang]}
           key="description"
         />
+        <meta property="og:image" content="/images/share/sourcemap-social-share.jpg" />
       </Head>
       <main className={styles.main}>
         <Hero />
