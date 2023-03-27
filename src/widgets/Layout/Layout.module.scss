@@ -79,6 +79,10 @@
   align-items: center;
   gap: 15px;
   padding-right: 30px;
+
+  @media screen and (max-width: $tablet) {
+    padding: 0;
+  }
 }
 
 .button {

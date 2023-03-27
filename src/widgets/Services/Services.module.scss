@@ -8,3 +8,11 @@
     margin-top: 30px;
   }
 }
+
+.title {
+  margin-bottom: 53px;
+
+  @media screen and (max-width: $tablet) {
+    margin-bottom: 15px;
+  }
+}
