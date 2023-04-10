@@ -1,10 +1,12 @@
 import React, { ReactNode } from 'react';
 
+export type ServiceItemTitle = {
+  en: string;
+  ru: string;
+}
+
 type ServicesItem = {
-  title: {
-    en: string;
-    ru: string;
-  };
+  title: ServiceItemTitle;
   content: {
     en: ReactNode;
     ru: ReactNode
