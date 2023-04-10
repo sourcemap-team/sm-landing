@@ -2,10 +2,12 @@ import React, { ReactNode } from 'react';
 
 type ServicesItem = {
   title: {
-    [key: string]: string;
+    en: string;
+    ru: string;
   };
   content: {
-    [key: string]: ReactNode;
+    en: ReactNode;
+    ru: ReactNode
   };
   icon: string;
 };
@@ -13,8 +15,29 @@ type ServicesItem = {
 export const SERVICES_ITEMS: ServicesItem[] = [
   {
     title: {
-      en: 'Web Apps',
-      ru: 'Разработка веб-сервисов',
+      en: 'Progressive Web Apps',
+      ru: 'Progressive Web Apps'
+    },
+    content: {
+      en: (
+        <>
+          PWA is becoming increasingly popular, as it offers a fast and cost-effective way to launch cross-platform applications on the most popular platforms: iOS, Android and the Web.
+          PWA has several advantages, including speed, low cost of support, easy testing, and a unified stack. With the latest update, PWA now also includes features such as push notifications, making it almost identical to a mobile app.
+        </>
+      ),
+      ru: (
+        <>
+          PWA-приложения набирают очень большую популярность, так как они быстрее и дешевле всего позволяют запустить кросс-платформенное приложение на самых популярных платформах: iOS, Android и Web.
+          Скорость, дешевая поддержка, простое тестирование, единый стек – это лишь малая часть преимуществ PWA. Последнее обновление добавило такие возможности, как push-уведомления, что делает PWA решение практически идентичным мобильному приложению.
+        </>
+      )
+    },
+    icon: '/icons/services/pwa.svg'
+  },
+  {
+    title: {
+      en: 'Web Applications',
+      ru: 'Веб-приложения',
     },
     content: {
       en: (
@@ -27,7 +50,7 @@ export const SERVICES_ITEMS: ServicesItem[] = [
       ru: (
         <>
           Одно из приоритетных направлений нашей команды. Разрабатываем сервисы
-          от простых веб-приложений до высоконагруженных банковских систем.
+          от простых веб-приложений до высоко нагруженных банковских систем.
           Установим удобную панель администратора для работы с контентом в вашей
           системе (CMS).
         </>
@@ -74,7 +97,7 @@ export const SERVICES_ITEMS: ServicesItem[] = [
     content: {
       en: (
         <>
-          We create simple and easy-to-use chatbots that help simplify and
+          We create simple and easy-to-use chat bots that help simplify and
           automate the process for both the client and the business: make an
           appointment, take an order, clarify background information, and much
           more. Platforms: Telegram/What&apos;s App

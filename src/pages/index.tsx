@@ -43,14 +43,14 @@ const Home = () => {
           content={META.description[lang]}
           key="description"
         />
-        <meta property="og:image" itemProp="image" content="/images/share/sourcemap-social-share.jpg" />
+        <meta property="og:image" itemProp="image" content="https://sourcemap.pro/images/share/sourcemap-social-share.jpg" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={META.title[lang]} />
         <meta name="twitter:site" content="@sourcemap.pro" />
         <meta
           name="twitter:image"
-          content="/images/share/sourcemap-social-share.jpg"
+          content="https://sourcemap.pro/images/share/sourcemap-social-share.jpg"
         />
         <meta name="twitter:image:alt" content={META.title[lang]} />
 
