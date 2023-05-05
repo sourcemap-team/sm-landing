@@ -1,5 +1,8 @@
-import React, { FC } from 'react';
+import styles from './ChangeLanguageButton.module.scss';
+
+import React, { FC, MouseEventHandler } from 'react';
 import { useRouter } from 'next/router';
+import cx from 'classnames';
 
 import { Icon } from '@/shared/ui/Icon';
 
@@ -15,14 +18,14 @@ export const ChangeLanguageButton: FC<ChangeLanguageButtonProps> = (props) => {
     pathname,
     query,
     asPath,
-    ...router
+    push,
   } = useRouter();
 
-  const changeLanguage = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const changeLanguage: MouseEventHandler<HTMLButtonElement> = (e) => {
     e.preventDefault();
     if (currentLocale && locales?.includes(currentLocale)) {
       const enLocale: string = defaultLocale || 'en';
-      router.push({ pathname, query }, asPath, {
+      push({ pathname, query }, asPath, {
         locale: currentLocale === defaultLocale ? 'ru' : enLocale,
         scroll: false,
       });
@@ -30,7 +33,11 @@ export const ChangeLanguageButton: FC<ChangeLanguageButtonProps> = (props) => {
   };
 
   return (
-    <button type="button" onClick={changeLanguage} className={props.className}>
+    <button
+      type="button"
+      onClick={changeLanguage}
+      className={cx(styles.btn, props.className)}
+    >
       <Icon name="planet" width={24} height={24} />
       {currentLocale?.toUpperCase()}
     </button>

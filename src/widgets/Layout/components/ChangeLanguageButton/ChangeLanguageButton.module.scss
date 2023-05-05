@@ -1,0 +1,13 @@
+.btn {
+  $white: var(--white);
+  padding: 10px 20px;
+  background: var(--white);
+  border-radius: 10px;
+  transition: 300ms;
+  cursor: pointer;
+  color: var(--dark);
+
+  &:hover {
+    box-shadow: 0 0 20px 10px rgba(255,255,255, 0.5);
+  }
+}

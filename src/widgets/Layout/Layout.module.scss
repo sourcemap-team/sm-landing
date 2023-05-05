@@ -28,7 +28,6 @@
   }
 }
 
-$top: 30px;
 
 .menu, .langButton {
   z-index: 2;
@@ -41,20 +40,19 @@ $top: 30px;
 }
 
 .menu {
+  $top: 30px;
   position: fixed;
   top: $top;
   flex-direction: column;
-  height: calc(100% - $top);
+  height: calc(100% - $top * 2);
   padding: 0 0 0 64px;
   list-style-type: none;
 }
 
 .langButton {
   position: absolute;
-  bottom: $top;
+  bottom: 0;
   align-items: center;
-  color: var(--dark);
-  cursor: pointer;
 }
 
 .link {
@@ -94,7 +92,7 @@ $top: 30px;
   gap: 15px;
   padding-right: 30px;
 
-  @media screen and (max-width: $tablet) {
+  @media screen and (max-width: $desktop-m) {
     padding: 0;
   }
 }
