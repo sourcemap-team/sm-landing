@@ -1,5 +1,4 @@
 * {
-  all: unset;
   display: revert;
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -48,6 +47,9 @@ button {
   font-size: 17px;
   line-height: 23px;
   color: var(--dark);
+  outline: none;
+  border: 0;
+  background: none;
 }
 
 .tag {
@@ -73,6 +75,7 @@ a {
   line-height: 43px;
   color: var(--dark);
   cursor: pointer;
+  text-decoration: none;
 }
 
 a:hover {

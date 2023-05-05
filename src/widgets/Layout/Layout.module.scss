@@ -28,19 +28,33 @@
   }
 }
 
-.menu {
-  position: fixed;
-  top: 30px;
-  padding: 0 0 0 64px;
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+$top: 30px;
+
+.menu, .langButton {
   z-index: 2;
+  display: flex;
+  gap: 12px;
 
   @media screen and (max-width: $desktop-m) {
     display: none;
   }
+}
+
+.menu {
+  position: fixed;
+  top: $top;
+  flex-direction: column;
+  height: calc(100% - $top);
+  padding: 0 0 0 64px;
+  list-style-type: none;
+}
+
+.langButton {
+  position: absolute;
+  bottom: $top;
+  align-items: center;
+  color: var(--dark);
+  cursor: pointer;
 }
 
 .link {

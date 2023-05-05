@@ -7,6 +7,7 @@ import cx from 'classnames';
 import { Manrope } from '@next/font/google';
 import { useScrollSpy } from '@/shared/hooks';
 import { useRouter } from 'next/router';
+import { ChangeLanguageButton } from './components';
 
 const manropeFont = Manrope({
   subsets: ['latin'],
@@ -87,6 +88,8 @@ export const Layout = ({ children }: { children: ReactNode }) => {
             </a>
           </li>
         ))}
+
+        <ChangeLanguageButton className={styles.langButton} />
       </ul>
       <div className={styles.content}>{children}</div>
       <div className={styles.action}>
