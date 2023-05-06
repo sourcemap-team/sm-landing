@@ -4,18 +4,12 @@ import styles from './Layout.module.scss';
 
 import React, { ReactNode } from 'react';
 import cx from 'classnames';
-import { Manrope } from '@next/font/google';
 import { useScrollSpy } from '@/shared/hooks';
 import { useRouter } from 'next/router';
 import { ChangeLanguageButton } from './components';
 
-const manropeFont = Manrope({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-});
-
 type Menu = {
-  name: { [key: string]: string };
+  name: Record<string, string>;
   link: string;
   id: string;
 };
@@ -68,7 +62,7 @@ export const Layout = ({ children }: { children: ReactNode }) => {
   const lang: string = router.locale || '';
 
   return (
-    <div className={cx(styles.container, manropeFont.className)}>
+    <div className={styles.container}>
       <ul className={styles.menu}>
         {MENU_ITEMS.map((item) => (
           <li key={item.name[lang]}>

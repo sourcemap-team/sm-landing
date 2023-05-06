@@ -1,15 +1,13 @@
-type Project = {
+export type Project = {
   title: string;
-  about: {
-    [key: string]: string;
-  };
+  about: Record<string, string>;
   link: string;
   date: string;
   img: string;
   tags: string[];
 };
 
-export const PROJECTS_LIST: Project[] = [
+export const PROJECTS: Project[] = [
   {
     title: 'FlowMapp',
     about: {

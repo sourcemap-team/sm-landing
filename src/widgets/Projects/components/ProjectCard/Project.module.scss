@@ -1,0 +1,97 @@
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 25px 0;
+
+  @media screen and (max-width: $tablet) {
+    flex-direction: column;
+    padding: 10px 0 20px;
+  }
+}
+
+.info, .imgWrap {
+  flex: 1;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  font-family: "PP NeueMachina Inktrap", sans-serif;
+
+  @media screen and (max-width: $tablet) {
+    margin-bottom: 5px;
+  }
+}
+
+.date {
+  color: var(--misc);
+}
+
+.desc {
+  margin-bottom: 30px;
+
+  @media screen and (max-width: $tablet) {
+    margin-bottom: 10px;
+  }
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  width: fit-content;
+  margin-bottom: auto;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+  transition: 300ms;
+
+  @media screen and (max-width: $tablet) {
+    margin-bottom: 26px;
+  }
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 48px;
+  background: var(--primary);
+  border-radius: 36px;
+}
+
+.btn * img {
+  width: 14px;
+  height: 17px;
+
+  @media screen and (max-width: $tablet){
+    width: 9px;
+    height: 8px;
+  }
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.imgWrap {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
