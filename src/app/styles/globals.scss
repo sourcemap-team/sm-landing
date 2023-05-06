@@ -1,5 +1,4 @@
 * {
-  all: unset;
   display: revert;
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -48,6 +47,10 @@ button {
   font-size: 17px;
   line-height: 23px;
   color: var(--dark);
+  padding: 0;
+  outline: none;
+  border: 0;
+  background: none;
 }
 
 .tag {
@@ -73,10 +76,26 @@ a {
   line-height: 43px;
   color: var(--dark);
   cursor: pointer;
+  text-decoration: none;
 }
 
 a:hover {
   color: var(--primary);
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+ul,
+li {
+  margin: 0;
+  padding: 0;
 }
 
 h1,
@@ -86,7 +105,7 @@ h4,
 h5,
 h6,
 p,
-span {
+span, {
   user-select: none;
 }
 
