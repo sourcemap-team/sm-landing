@@ -1,48 +1,50 @@
 import styles from './Pricing.module.scss';
 
 import React from 'react';
-import cx from 'classnames';
 import { useRouter } from 'next/router';
-import { PRICING_TEXT } from '@/widgets/Pricing/text';
+import cx from 'classnames';
+
+import { PRICING } from './text';
 
 export const Pricing = () => {
-  const router = useRouter();
-  const lang: string = router.locale || '';
+  const { locale } = useRouter();
+  const lang: string = locale || 'en';
 
   return (
     <div className={styles.container} id="pricing">
       <h2 className={cx('title', styles.title)} id="price">
-        {PRICING_TEXT.title[lang]}
+        {PRICING.title[lang]}
       </h2>
+
       <div className={styles.info}>
         <div className={styles.block}>
           <p className={cx(styles.light, styles.textShort, styles.text)}>
-            {PRICING_TEXT.lowPrice.text[lang]}
+            {PRICING.lowPrice.text[lang]}
           </p>
           <div className={styles.basicWidth}>
             <p className={cx(styles.minPrice, styles.light)}>
-              {PRICING_TEXT.lowPrice.price[lang]}
+              {PRICING.lowPrice.price[lang]}
             </p>
             <p className={cx(styles.time, styles.light)}>
-              {PRICING_TEXT.lowPrice.time[lang]}
+              {PRICING.lowPrice.time[lang]}
             </p>
           </div>
         </div>
         <div className={styles.block}>
           <p className={cx(styles.light, styles.textLong, styles.text)}>
-            {PRICING_TEXT.fullPrice.text[lang]}
+            {PRICING.fullPrice.text[lang]}
           </p>
           <div className={styles.tabletWidth}>
             <p className={cx(styles.minPrice, styles.light)}>
-              {PRICING_TEXT.lowPrice.price[lang]}
+              {PRICING.lowPrice.price[lang]}
             </p>
             <p className={cx(styles.time, styles.light)}>
-              {PRICING_TEXT.lowPrice.time[lang]}
+              {PRICING.lowPrice.time[lang]}
             </p>
           </div>
-          <p className={styles.price}>{PRICING_TEXT.fullPrice.price[lang]}</p>
+          <p className={styles.price}>{PRICING.fullPrice.price[lang]}</p>
           <p className={cx(styles.time, styles.light, styles.timeFullPrice)}>
-            {PRICING_TEXT.fullPrice.time[lang]}
+            {PRICING.fullPrice.time[lang]}
           </p>
         </div>
       </div>

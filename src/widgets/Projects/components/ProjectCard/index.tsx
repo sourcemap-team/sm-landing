@@ -39,7 +39,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({ project, className }) => {
             <button className={styles.btn}>
               <img src="/icons/arrow-right.svg" alt="Arrow Right" />
             </button>
-            <span>{textMap.get(lang)}</span>
+            <span className={styles.linkText}>{textMap.get(lang)}</span>
           </a>
           <ul className={styles.tags}>
             {project.tags.map((t) => (

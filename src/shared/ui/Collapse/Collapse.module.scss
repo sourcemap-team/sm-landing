@@ -63,7 +63,8 @@
 }
 
 .title {
-  transition: 0.2s all ease-in-out;
+  font-family: "PP NeueMachina Inktrap", sans-serif;
+  transition: 200ms ease-in-out;
 
   @media screen and (max-width: $tablet) {
     font-weight: 400;
