@@ -50,6 +50,17 @@
   }
 }
 
+.block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 338px;
+
+  @media screen and (max-width: $tablet){
+    min-height: auto;
+  }
+}
+
 .time {
   font-style: normal;
   font-weight: 400;
@@ -59,10 +70,10 @@
 }
 
 .minPrice {
-  height: 55px;
   display: block;
+  height: 55px;
   margin-top: 118px;
-  font-family: 'DRAB', sans-serif;
+  font-family: 'PP NeueMachina Inktrap', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 60px;
@@ -96,7 +107,7 @@
 .price {
   height: 100px;
   margin-top: 73px;
-  font-family: 'DRAB', sans-serif;
+  font-family: 'PP NeueMachina Inktrap', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 110px;

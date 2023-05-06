@@ -17,7 +17,6 @@ export const ChangeLanguageButton: FC<ChangeLanguageButtonProps> = (props) => {
     locales,
     pathname,
     query,
-    asPath,
     push,
   } = useRouter();
 
@@ -25,7 +24,7 @@ export const ChangeLanguageButton: FC<ChangeLanguageButtonProps> = (props) => {
     e.preventDefault();
     if (currentLocale && locales?.includes(currentLocale)) {
       const enLocale: string = defaultLocale || 'en';
-      push({ pathname, query }, asPath, {
+      push({ pathname, query }, pathname, {
         locale: currentLocale === defaultLocale ? 'ru' : enLocale,
         scroll: false,
       });

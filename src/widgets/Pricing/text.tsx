@@ -1,35 +1,19 @@
 import { ReactNode } from 'react';
 import styles from './Pricing.module.scss';
 
-type Pricing = {
-  title: {
-    [key: string]: string;
-  };
-  lowPrice: {
-    text: {
-      [key: string]: string;
-    };
-    time: {
-      [key: string]: string;
-    };
-    price: {
-      [key: string]: ReactNode;
-    };
-  };
-  fullPrice: {
-    text: {
-      [key: string]: string;
-    };
-    time: {
-      [key: string]: string;
-    };
-    price: {
-      [key: string]: ReactNode;
-    };
-  };
+type PriceData = {
+  text: Record<string, string>;
+  time: Record<string, string>;
+  price: Record<string, ReactNode>;
 };
 
-const PRICING_TEXT: Pricing = {
+type Pricing = {
+  title: Record<string, string>;
+  lowPrice: PriceData;
+  fullPrice: PriceData;
+};
+
+export const PRICING: Pricing = {
   title: {
     en: 'Pricing',
     ru: 'Cтоимость',
@@ -77,5 +61,3 @@ const PRICING_TEXT: Pricing = {
     },
   },
 };
-
-export { PRICING_TEXT };

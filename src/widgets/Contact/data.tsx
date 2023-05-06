@@ -1,21 +1,19 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 
-type Contact = {
-  name: {
-    [key: string]: string;
-  };
-  role: {
-    [key: string]: string;
-  };
-  img: string;
-  links: {
-    icon: string;
-    link: string;
-    name: string;
-  }[];
+type Link = {
+  icon: string;
+  href: string;
+  name: string;
 };
 
-const CONTACTS_LIST: Contact[] = [
+type Contact = {
+  name: Record<string, string>;
+  role: Record<string, string>;
+  img: string;
+  links: Link[];
+};
+
+export const CONTACTS: Contact[] = [
   {
     name: {
       en: 'Roman Babanov',
@@ -29,17 +27,17 @@ const CONTACTS_LIST: Contact[] = [
     links: [
       {
         icon: '/icons/socials/linkedin.svg',
-        link: 'https://www.linkedin.com/in/roman-babanov/',
+        href: 'https://www.linkedin.com/in/roman-babanov/',
         name: 'linkedin',
       },
       {
         icon: '/icons/socials/telegram.svg',
-        link: 'https://t.me/c_o_o_n',
+        href: 'https://t.me/c_o_o_n',
         name: 'telegram',
       },
       {
         icon: '/icons/socials/facebook.svg',
-        link: 'https://www.facebook.com/profile.php?id=100016170887764',
+        href: 'https://www.facebook.com/profile.php?id=100016170887764',
         name: 'facebook',
       },
     ],
@@ -57,46 +55,42 @@ const CONTACTS_LIST: Contact[] = [
     links: [
       {
         icon: '/icons/socials/linkedin.svg',
-        link: 'https://www.linkedin.com/in/ogurechnikovsl/',
+        href: 'https://www.linkedin.com/in/ogurechnikovsl/',
         name: 'linkedin',
       },
       {
         icon: '/icons/socials/telegram.svg',
-        link: 'https://t.me/ogurechnikov',
+        href: 'https://t.me/ogurechnikov',
         name: 'telegram',
       },
       {
         icon: '/icons/socials/facebook.svg',
-        link: 'https://www.facebook.com/s.ogurechnikov',
+        href: 'https://www.facebook.com/s.ogurechnikov',
         name: 'facebook',
       },
     ],
   },
 ];
 
-const LINKS = [
+export const LINKS: Link[] = [
   {
     icon: '/icons/socials/linkedin.svg',
-    link: 'https://www.linkedin.com/company/sourcemap-pro/',
+    href: 'https://www.linkedin.com/company/sourcemap-pro/',
     name: 'linkedin',
   },
   {
     icon: '/icons/socials/github.svg',
-    link: 'https://github.com/sourcemap-team',
+    href: 'https://github.com/sourcemap-team',
     name: 'github',
   },
 ];
 
 type Info = {
-  title: {
-    [key: string]: ReactNode;
-  };
-  text: {
-    [key: string]: ReactNode;
-  };
+  title: Record<string, React.ReactNode>;
+  text: Record<string, React.ReactNode>;
 };
 
-const CONTACT_INFO: Info = {
+export const CONTACT_INFO: Info = {
   title: {
     ru: 'Связаться с нами',
     en: 'Contact Us',
@@ -109,7 +103,7 @@ const CONTACT_INFO: Info = {
         <a href="mailto:hello@sourcemap.pro" target="_blank">
           hello@sourcemap.pro
         </a>
-        &nbsp; или в соцсетях
+        &nbsp;или в соцсетях
       </>
     ),
     en: (
@@ -118,10 +112,8 @@ const CONTACT_INFO: Info = {
         <a href="mailto:hello@sourcemap.pro" target="_blank">
           hello@sourcemap.pro
         </a>
-        &nbsp; or on the social network
+        &nbsp;or on the social network
       </>
     ),
   },
 };
-
-export { LINKS, CONTACTS_LIST, CONTACT_INFO };

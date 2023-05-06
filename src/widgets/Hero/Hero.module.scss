@@ -1,4 +1,9 @@
 .container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 596px;
+  padding: 30px 30px 44px;
   background: linear-gradient(
       180deg,
       rgba(0, 0, 0, 0) 61.69%,
@@ -10,11 +15,6 @@
   background-repeat: no-repeat;
   background-size: 952px auto;
   border-radius: 10px;
-  min-height: 596px;
-  width: 100%;
-  padding: 30px 30px 44px;
-  display: flex;
-  flex-direction: column;
 
   @media screen and (max-width: $tablet) {
     background-position: 70% 10%;
@@ -30,16 +30,25 @@
 }
 
 .logo {
-  max-width: 598px;
-  width: 100%;
-
-  img {
-    width: 100%;
-    height: 100%;
-  }
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+  font-family: 'PP Neue Machina Plain', sans-serif;
+  font-size: 32px;
+  line-height: 25px;
+  color: var(--white);
 
   @media screen and (max-width: $tablet) {
-    max-width: 250px;
+    font-size: 25px;
+    line-height: 29px;
+  }
+}
+
+.title {
+  padding-top: 5px;
+
+  @media screen and (max-width: $tablet) {
+    padding-top: 8px;
   }
 }
 
@@ -66,5 +75,5 @@
 
 .dedicated {
   display: inline-block;
-  color: #b3ff01;
+  color: var(--primary);
 }

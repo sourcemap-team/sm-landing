@@ -3,19 +3,15 @@
 import styles from './Layout.module.scss';
 
 import React, { ReactNode } from 'react';
-import cx from 'classnames';
-import { Manrope } from '@next/font/google';
-import { useScrollSpy } from '@/shared/hooks';
 import { useRouter } from 'next/router';
+import cx from 'classnames';
+
+import { useScrollSpy } from '@/shared/hooks';
+
 import { ChangeLanguageButton } from './components';
 
-const manropeFont = Manrope({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-});
-
 type Menu = {
-  name: { [key: string]: string };
+  name: Record<string, string>;
   link: string;
   id: string;
 };
@@ -40,7 +36,7 @@ const MENU_ITEMS: Menu[] = [
   {
     name: {
       en: 'What we do',
-      ru: 'Что мы делаем',
+      ru: 'Что делаем',
     },
     link: '#skills',
     id: 'skills',
@@ -57,43 +53,39 @@ const MENU_ITEMS: Menu[] = [
 
 const MENU_IDS = ['services', 'projects', 'skills', 'pricing'];
 
-const CONTACT_US: { [key: string]: string } = {
+const CONTACT_US: Record<string, string> = {
   ru: 'Напиши нам',
   en: 'Contact Us',
 };
 
 export const Layout = ({ children }: { children: ReactNode }) => {
+  const { locale } = useRouter();
+  const lang: string = locale || 'en';
+
   const activeId = useScrollSpy(MENU_IDS, 100);
-  const router = useRouter();
-  const lang: string = router.locale || '';
 
   return (
-    <div className={cx(styles.container, manropeFont.className)}>
-      <ul className={styles.menu}>
-        {MENU_ITEMS.map((item) => (
-          <li key={item.name[lang]}>
-            <a
-              className={cx(
-                styles.link,
-                {
-                  [styles.active]: item.id === activeId,
-                },
-                {
-                  [styles.light]: activeId === 'pricing',
-                }
-              )}
-              href={item.link}
-            >
-              {item.name[lang]}
-            </a>
-          </li>
-        ))}
+    <div className={styles.container}>
+      <nav className={styles.nav}>
+        <ul className={styles.menu}>
+          {MENU_ITEMS.map((item) => (
+            <li key={item.name[lang]}>
+              <a
+                href={item.link}
+                aria-current={item.id === activeId}
+                className={cx(styles.link)}
+              >
+                {item.name[lang]}
+              </a>
+            </li>
+          ))}
+        </ul>
 
         <ChangeLanguageButton className={styles.langButton} />
-      </ul>
+      </nav>
       <div className={styles.content}>{children}</div>
       <div className={styles.action}>
-        <img className={styles.logo} src="/icons/logo-m.svg" alt="Sourcemap" />
+        <div className={styles.logo}>SOURCEMAP.PRO</div>
         <a href="#contact" className={styles.actionLink}>
           <span
             className={cx(styles.actionText, {
