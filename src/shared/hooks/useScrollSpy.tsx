@@ -12,7 +12,7 @@ export const useScrollSpy = (ids: string[], offset = 0) => {
 
   useLayoutEffect(() => {
     const listener = () => {
-      const scroll = window.pageYOffset;
+      const scroll = window.scrollY;
 
       const position = ids
         .map((id) => {

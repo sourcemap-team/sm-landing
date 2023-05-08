@@ -17,19 +17,20 @@
   font-weight: 400;
   font-size: 19px;
   line-height: 26px;
-  color: rgba(8, 8, 8, 0.6);
+  color: var(--font-dark);
 
   @media screen and (max-width: $tablet) {
     margin: 20px 0 10px;
   }
 
   & a {
-    transition: 0.2s all;
+    display: inline-block;
+    transition: 300ms;
     font-style: normal;
     font-weight: 400;
     font-size: 19px;
     line-height: 26px;
-    color: rgba(8, 8, 8, 0.6);
+    color: var(--font-dark);
 
     &:hover {
       color: var(--dark);
@@ -97,7 +98,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.2s all;
+  transition: 300ms;
 
   &:hover {
     background: var(--primary);

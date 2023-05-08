@@ -5,6 +5,7 @@
   transition: 300ms;
   cursor: pointer;
   color: var(--font-dark);
+  text-transform: capitalize;
 
   &:hover {
     color: var(--dark);

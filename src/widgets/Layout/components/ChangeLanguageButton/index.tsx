@@ -38,7 +38,7 @@ export const ChangeLanguageButton: FC<ChangeLanguageButtonProps> = (props) => {
       className={cx(styles.btn, props.className)}
     >
       <Icon name="planet" width={24} height={24} />
-      {currentLocale?.toUpperCase()}
+      {currentLocale}
     </button>
   );
 };
