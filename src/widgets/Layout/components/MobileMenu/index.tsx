@@ -1,6 +1,7 @@
 import styles from './MobileMenu.module.scss';
 
-import { FC } from 'react';
+import { Dispatch, FC, SetStateAction, useEffect } from 'react';
+import cx from 'classnames';
 
 import { SocialLinks } from '@/features';
 
@@ -11,21 +12,38 @@ import { MENU_ITEMS, MENU_IDS } from '../../menu';
 import { ChangeLanguageButton } from '../ChangeLanguageButton';
 import { LINKS, buttonLocaleMap } from './data';
 
-interface MobileMenuProps {
-  visible: boolean;
-}
+type MobileMenuProps = {
+  open?: boolean;
+  onSetMobileMenuState: Dispatch<SetStateAction<{ open: boolean }>>;
+};
 
-export const MobileMenu: FC<MobileMenuProps> = (props) => {
+export const MobileMenu: FC<MobileMenuProps> = ({
+  open = false,
+  onSetMobileMenuState,
+}) => {
   const activeId = useScrollSpy(MENU_IDS, 100);
   const locale = useLocale();
-  const { visible = false } = props;
 
-  if (!visible) {
+  const closeMobileMenu = () => {
+    onSetMobileMenuState((prev) => ({ ...prev, open: false }));
+  };
+
+  useEffect(() => {
+    const body = document.body;
+    if (open) {
+      body.setAttribute('style', 'overflow: hidden;');
+    }
+    return () => {
+      body.setAttribute('style', 'overflow: auto;');
+    };
+  }, [open]);
+
+  if (!open) {
     return null;
   }
 
   return (
-    <div>
+    <div className={cx(styles.mobileMenu, open && styles.open)}>
       <nav className={styles.nav}>
         <ul className={styles.menu}>
           {MENU_ITEMS.map((item) => (
@@ -33,6 +51,7 @@ export const MobileMenu: FC<MobileMenuProps> = (props) => {
               <a
                 href={item.href}
                 aria-current={item.id === activeId}
+                onClick={closeMobileMenu}
                 className={styles.anchor}
               >
                 {item.name[locale]}
@@ -42,7 +61,7 @@ export const MobileMenu: FC<MobileMenuProps> = (props) => {
         </ul>
       </nav>
 
-      <SocialLinks links={LINKS} />
+      <SocialLinks links={LINKS} className={styles.links} />
 
       <a
         href="mailto:hello@sourcemap.pro"
@@ -54,11 +73,13 @@ export const MobileMenu: FC<MobileMenuProps> = (props) => {
       </a>
 
       <div className={styles.actions}>
-        <a href="#contact">
-          <Button className={styles.btn}>{buttonLocaleMap.get(locale)}</Button>
+        <a href="#contact" className={styles.contactLink}>
+          <Button onClick={closeMobileMenu} className={styles.btn}>
+            {buttonLocaleMap.get(locale)}
+          </Button>
         </a>
 
-        <ChangeLanguageButton />
+        <ChangeLanguageButton withBorder className={styles.localeBtn} />
       </div>
     </div>
   );

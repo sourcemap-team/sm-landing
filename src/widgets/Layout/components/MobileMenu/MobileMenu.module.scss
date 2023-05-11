@@ -1,12 +1,38 @@
-.nav {
+.mobileMenu {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: var(--white);
 
+  @media screen and (max-width: $desktop-m) {
+    top: 60px;
+    height: calc(100% - 60px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    top: 50px;
+    height: calc(100% - 50px);
+  }
+}
+
+.nav, .mail {
+  margin-bottom: 20px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
 }
 
 .menu {
   font-weight: 500;
   font-size: 28px;
   line-height: 34px;
-  color: var(--font-dark);
 }
 
 .item {
@@ -14,16 +40,53 @@
 }
 
 .anchor {
+  display: block;
+  padding: 20px 0;
+  color: var(--font-dark);
+  transition: 200ms;
 
-  &:hover {
+  &[aria-current='true'], &:hover {
     color: var(--dark);
   }
 }
 
-.actions {
+.links {
+  margin-bottom: auto;
+}
 
+.actions {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 16px;
+  padding-top: 20px;
+  border-top: 1px solid var(--misc);
+}
+
+.contactLink, .localeBtn {
+  display: flex;
+}
+
+.contactLink {
+  max-width: 250px;
+  width: 100%;
+}
+
+.mail,
+.btn,
+.localeBtn {
+  font-size: 20px;
+  line-height: 23px;
+  font-weight: 500;
 }
 
 .btn {
+  padding: 18px;
+  border-radius: 100px;
+}
 
+.localeBtn {
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+  max-width: 104px;
 }

@@ -40,3 +40,8 @@ export const MENU_ITEMS: Menu[] = [
     id: 'pricing',
   },
 ];
+
+export const ContactUsBtnLocaleMap = new Map([
+  ['en', 'Contact Us'],
+  ['ru', 'Написать нам'],
+]);

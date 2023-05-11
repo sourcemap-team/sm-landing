@@ -36,8 +36,9 @@
   $top: 30px;
   position: fixed;
   top: $top;
-  padding-left: 40px;
+  display: flex;
   flex-direction: column;
+  padding-left: 40px;
   height: calc(100% - $top * 2);
 
   @media screen and (max-width: $desktop-m) {
@@ -95,9 +96,10 @@
 
   @media screen and (max-width: $desktop-m) {
     top: 0;
-    background: var(--white);
-    padding: 13px 20px;
+    display: flex;
     justify-content: space-between;
+    padding: 13px 20px;
+    background: var(--white);
   }
 
   @media screen and (max-width: $tablet) {
@@ -106,16 +108,16 @@
 }
 
 .actionLink {
-  transition: 300ms;
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
+  margin-right: 20px;
   padding-left: 20px;
-  margin-right: 30px;
   border-radius: 10px 36px 36px 10px;
   background: var(--white);
   color: var(--font-dark);
   overflow: hidden;
+  transition: 300ms;
 
   &:hover {
     color: var(--dark);
@@ -127,14 +129,7 @@
   }
 
   @media screen and (max-width: $desktop-m) {
-    margin: 0;
-    &:hover {
-      box-shadow: none;
-
-      .button {
-        box-shadow: none;
-      }
-    }
+    display: none;
   }
 }
 
@@ -149,19 +144,9 @@
   cursor: pointer;
   transition: 300ms;
 
-  img {
-    width: 14px;
-    height: 17px;
-  }
-
   @media screen and (max-width: $tablet) {
     width: 35px;
     height: 28px;
-
-    img {
-      width: 8px;
-      height: 10px;
-    }
   }
 }
 
@@ -193,5 +178,19 @@
     padding-top: 2px;
     font-size: 19px;
     line-height: 26px;
+  }
+}
+
+.btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding-bottom: 5px;
+  border-radius: 50%;
+
+  @media screen and (max-width: $desktop-m) {
+    display: flex;
   }
 }
