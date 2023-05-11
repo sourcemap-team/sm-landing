@@ -8,9 +8,7 @@ import cx from 'classnames';
 import { useScrollSpy, useLocale } from '@/shared/hooks';
 
 import { ChangeLanguageButton } from './components';
-import { MENU_ITEMS } from './menu';
-
-const MENU_IDS = ['services', 'projects', 'skills', 'pricing'];
+import { MENU_ITEMS, MENU_IDS } from './menu';
 
 const CONTACT_US: Record<string, string> = {
   ru: 'Напиши нам',

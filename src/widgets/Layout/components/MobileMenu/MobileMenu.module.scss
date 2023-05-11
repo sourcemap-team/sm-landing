@@ -1,0 +1,29 @@
+.nav {
+
+}
+
+.menu {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 34px;
+  color: var(--font-dark);
+}
+
+.item {
+  border-bottom: 1px solid var(--misc);
+}
+
+.anchor {
+
+  &:hover {
+    color: var(--dark);
+  }
+}
+
+.actions {
+
+}
+
+.btn {
+
+}

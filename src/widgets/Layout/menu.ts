@@ -4,6 +4,8 @@ type Menu = {
   id: string;
 };
 
+export const MENU_IDS = ['services', 'projects', 'skills', 'pricing'];
+
 export const MENU_ITEMS: Menu[] = [
   {
     name: {
