@@ -4,7 +4,7 @@ import React, { FC, MouseEventHandler } from 'react';
 import { useRouter } from 'next/router';
 import cx from 'classnames';
 
-import { Icon } from '@/shared/ui/Icon';
+import { Icon } from '@/shared/ui';
 
 export type ChangeLanguageButtonProps = {
   className?: string;

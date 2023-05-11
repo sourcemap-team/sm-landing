@@ -4,7 +4,7 @@ import React from 'react';
 
 import { useLocale } from '@/shared/hooks';
 
-import { Icon } from '@/shared/ui/Icon';
+import { Icon } from '@/shared/ui';
 
 const localeDescMap = new Map([
   [
