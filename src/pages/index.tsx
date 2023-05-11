@@ -44,7 +44,7 @@ const Home = () => {
         <meta
           property="og:image"
           itemProp="image"
-          content="https://sourcemap.pro/images/share/sourcemap-social-share.jpg"
+          content="https://sourcemap.pro/images/share/share-image.jpg"
         />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -52,7 +52,7 @@ const Home = () => {
         <meta name="twitter:site" content="@sourcemap.pro" />
         <meta
           name="twitter:image"
-          content="https://sourcemap.pro/images/share/sourcemap-social-share.jpg"
+          content="https://sourcemap.pro/images/share/share-image.jpg"
         />
         <meta name="twitter:image:alt" content={META.title[locale]} />
 
