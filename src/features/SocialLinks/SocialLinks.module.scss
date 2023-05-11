@@ -1,0 +1,19 @@
+.links {
+  display: flex;
+  column-gap: 5px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border: 1px solid var(--misc);
+  border-radius: 50%;
+  transition: 200ms;
+
+  &:hover {
+    background: var(--primary);
+  }
+}

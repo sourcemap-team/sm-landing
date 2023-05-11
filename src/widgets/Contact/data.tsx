@@ -1,9 +1,13 @@
 import React from 'react';
 
 type Link = {
-  icon: string;
+  id: number;
   href: string;
-  name: string;
+  icon: {
+    name: string;
+    width: number;
+    height: number;
+  };
 };
 
 type Contact = {
@@ -26,19 +30,31 @@ export const CONTACTS: Contact[] = [
     img: '/images/contacts/Roman.png',
     links: [
       {
-        icon: '/icons/socials/linkedin.svg',
+        id: 1,
+        icon: {
+          name: 'linkedin',
+          width: 20,
+          height: 21,
+        },
         href: 'https://www.linkedin.com/in/roman-babanov/',
-        name: 'linkedin',
       },
       {
-        icon: '/icons/socials/telegram.svg',
+        id: 2,
+        icon: {
+          name: 'telegram',
+          width: 22,
+          height: 20,
+        },
         href: 'https://t.me/c_o_o_n',
-        name: 'telegram',
       },
       {
-        icon: '/icons/socials/facebook.svg',
+        id: 3,
+        icon: {
+          name: 'facebook',
+          width: 20,
+          height: 20,
+        },
         href: 'https://www.facebook.com/profile.php?id=100016170887764',
-        name: 'facebook',
       },
     ],
   },
@@ -54,34 +70,33 @@ export const CONTACTS: Contact[] = [
     img: '/images/contacts/Sergey.png',
     links: [
       {
-        icon: '/icons/socials/linkedin.svg',
+        id: 1,
+        icon: {
+          name: 'linkedin',
+          width: 20,
+          height: 21,
+        },
         href: 'https://www.linkedin.com/in/ogurechnikovsl/',
-        name: 'linkedin',
       },
       {
-        icon: '/icons/socials/telegram.svg',
+        id: 2,
+        icon: {
+          name: 'telegram',
+          width: 22,
+          height: 20,
+        },
         href: 'https://t.me/ogurechnikov',
-        name: 'telegram',
       },
       {
-        icon: '/icons/socials/facebook.svg',
+        id: 3,
+        icon: {
+          name: 'facebook',
+          width: 20,
+          height: 20,
+        },
         href: 'https://www.facebook.com/s.ogurechnikov',
-        name: 'facebook',
       },
     ],
-  },
-];
-
-export const LINKS: Link[] = [
-  {
-    icon: '/icons/socials/linkedin.svg',
-    href: 'https://www.linkedin.com/company/sourcemap-pro/',
-    name: 'linkedin',
-  },
-  {
-    icon: '/icons/socials/github.svg',
-    href: 'https://github.com/sourcemap-team',
-    name: 'github',
   },
 ];
 
@@ -117,3 +132,24 @@ export const CONTACT_INFO: Info = {
     ),
   },
 };
+
+export const LINKS: Link[] = [
+  {
+    id: 1,
+    icon: {
+      name: 'linkedin',
+      width: 20,
+      height: 21,
+    },
+    href: 'https://www.linkedin.com/company/sourcemap-pro/',
+  },
+  {
+    id: 2,
+    icon: {
+      name: 'github',
+      width: 20,
+      height: 20,
+    },
+    href: 'https://github.com/sourcemap-team',
+  },
+];

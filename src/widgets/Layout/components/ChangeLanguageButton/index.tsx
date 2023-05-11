@@ -4,13 +4,17 @@ import React, { FC, MouseEventHandler } from 'react';
 import { useRouter } from 'next/router';
 import cx from 'classnames';
 
-import { Icon } from '@/shared/ui/Icon';
+import { Icon } from '@/shared/ui';
 
 export type ChangeLanguageButtonProps = {
   className?: string;
+  withBorder?: boolean;
 };
 
-export const ChangeLanguageButton: FC<ChangeLanguageButtonProps> = (props) => {
+export const ChangeLanguageButton: FC<ChangeLanguageButtonProps> = ({
+  withBorder = false,
+  className,
+}) => {
   const {
     locale: currentLocale,
     defaultLocale,
@@ -35,7 +39,7 @@ export const ChangeLanguageButton: FC<ChangeLanguageButtonProps> = (props) => {
     <button
       type="button"
       onClick={changeLanguage}
-      className={cx(styles.btn, props.className)}
+      className={cx(styles.btn, withBorder && styles.bordered, className)}
     >
       <Icon name="planet" width={24} height={24} />
       {currentLocale}

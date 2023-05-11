@@ -2,22 +2,22 @@
 
 import styles from './Collapse.module.scss';
 
-import React, { ReactNode, useState } from 'react';
+import React, { FC, PropsWithChildren, useState } from 'react';
 import cx from 'classnames';
 
 import { useDelayUnmount } from '@/shared/hooks';
 
-type CollapseProps = {
-  children: ReactNode;
+type CollapseProps = PropsWithChildren & {
   title: string;
   icon: string;
 };
-export const Collapse = ({ title, children, icon }: CollapseProps) => {
+
+export const Collapse: FC<CollapseProps> = ({ title, children, icon }) => {
   const [isCollapsed, setCollapsed] = useState(true);
   const shouldShowContent = useDelayUnmount(!isCollapsed, 250);
 
   const handleCollapse = () => {
-    setCollapsed(!isCollapsed);
+    setCollapsed((prev) => !prev);
   };
 
   return (

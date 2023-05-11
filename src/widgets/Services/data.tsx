@@ -1,16 +1,13 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 export type ServiceItemTitle = {
   en: string;
   ru: string;
-}
+};
 
 type ServicesItem = {
   title: ServiceItemTitle;
-  content: {
-    en: ReactNode;
-    ru: ReactNode
-  };
+  content: Record<keyof ServiceItemTitle, ReactNode>;
   icon: string;
 };
 
@@ -18,23 +15,33 @@ export const SERVICES_ITEMS: ServicesItem[] = [
   {
     title: {
       en: 'Progressive Web Apps',
-      ru: 'Progressive Web Apps'
+      ru: 'Progressive Web Apps',
     },
     content: {
       en: (
         <>
-          PWA is becoming increasingly popular, as it offers a fast and cost-effective way to launch cross-platform applications on the most popular platforms: iOS, Android and the Web.
-          PWA has several advantages, including speed, low cost of support, easy testing, and a unified stack. With the latest update, PWA now also includes features such as push notifications, making it almost identical to a mobile app.
+          PWA is becoming increasingly popular, as it offers a fast and
+          cost-effective way to launch cross-platform applications on the most
+          popular platforms: iOS, Android and the Web. PWA has several
+          advantages, including speed, low cost of support, easy testing, and a
+          unified stack. With the latest update, PWA now also includes features
+          such as push notifications, making it almost identical to a mobile
+          app.
         </>
       ),
       ru: (
         <>
-          PWA-приложения набирают очень большую популярность, так как они быстрее и дешевле всего позволяют запустить кросс-платформенное приложение на самых популярных платформах: iOS, Android и Web.
-          Скорость, дешевая поддержка, простое тестирование, единый стек – это лишь малая часть преимуществ PWA. Последнее обновление добавило такие возможности, как push-уведомления, что делает PWA решение практически идентичным мобильному приложению.
+          PWA-приложения набирают очень большую популярность, так как они
+          быстрее и дешевле всего позволяют запустить кросс-платформенное
+          приложение на самых популярных платформах: iOS, Android и Web.
+          Скорость, дешевая поддержка, простое тестирование, единый стек – это
+          лишь малая часть преимуществ PWA. Последнее обновление добавило такие
+          возможности, как push-уведомления, что делает PWA решение практически
+          идентичным мобильному приложению.
         </>
-      )
+      ),
     },
-    icon: '/icons/services/pwa.svg'
+    icon: '/icons/services/pwa.svg',
   },
   {
     title: {

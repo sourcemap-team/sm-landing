@@ -2,103 +2,70 @@
 
 import styles from './Layout.module.scss';
 
-import React, { ReactNode } from 'react';
-import { useRouter } from 'next/router';
+import React, { PropsWithChildren, useState } from 'react';
 import cx from 'classnames';
 
-import { useScrollSpy } from '@/shared/hooks';
+import { useScrollSpy, useLocale } from '@/shared/hooks';
+import { AnimatedCross, Button, Icon } from '@/shared/ui';
 
-import { ChangeLanguageButton } from './components';
+import { ChangeLanguageButton, MobileMenu } from './components';
+import { MENU_ITEMS, MENU_IDS, ContactUsBtnLocaleMap } from './menu';
 
-type Menu = {
-  name: Record<string, string>;
-  link: string;
-  id: string;
-};
-
-const MENU_ITEMS: Menu[] = [
-  {
-    name: {
-      en: 'Services',
-      ru: 'Услуги',
-    },
-    link: '#services',
-    id: 'services',
-  },
-  {
-    name: {
-      en: 'Projects',
-      ru: 'Проекты',
-    },
-    link: '#projects',
-    id: 'projects',
-  },
-  {
-    name: {
-      en: 'What we do',
-      ru: 'Что делаем',
-    },
-    link: '#skills',
-    id: 'skills',
-  },
-  {
-    name: {
-      en: 'Pricing',
-      ru: 'Cтоимость',
-    },
-    link: '#price',
-    id: 'pricing',
-  },
-];
-
-const MENU_IDS = ['services', 'projects', 'skills', 'pricing'];
-
-const CONTACT_US: Record<string, string> = {
-  ru: 'Напиши нам',
-  en: 'Contact Us',
-};
-
-export const Layout = ({ children }: { children: ReactNode }) => {
-  const { locale } = useRouter();
-  const lang: string = locale || 'en';
-
+export const Layout = ({ children }: PropsWithChildren) => {
   const activeId = useScrollSpy(MENU_IDS, 100);
+  const locale = useLocale();
+  const [mobileMenuState, setMobileMenuState] = useState<{ open: boolean }>({
+    open: false,
+  });
+
+  const toggleMobileMenuStateOpen = () =>
+    setMobileMenuState((prev) => ({ ...prev, open: !prev.open }));
 
   return (
     <div className={styles.container}>
       <nav className={styles.nav}>
         <ul className={styles.menu}>
           {MENU_ITEMS.map((item) => (
-            <li key={item.name[lang]}>
+            <li key={item.name[locale]}>
               <a
-                href={item.link}
+                href={item.href}
                 aria-current={item.id === activeId}
                 className={cx(styles.link)}
               >
-                {item.name[lang]}
+                {item.name[locale]}
               </a>
             </li>
           ))}
         </ul>
-
         <ChangeLanguageButton className={styles.langButton} />
       </nav>
+
       <div className={styles.content}>{children}</div>
       <div className={styles.action}>
         <div className={styles.logo}>SOURCEMAP.PRO</div>
+
         <a href="#contact" className={styles.actionLink}>
-          <span
-            className={cx(styles.actionText, {
-              [styles.light]: activeId === 'pricing',
-            })}
-          >
-            {CONTACT_US[lang]}
+          <span className={styles.actionText}>
+            {ContactUsBtnLocaleMap.get(locale)}
           </span>
-          <button className={styles.button}>
-            <img src="/icons/arrow-right.svg" alt="Arrow Right" />
-          </button>
+          <Button className={styles.button}>
+            <Icon name="arrowRight" width={15} height={18} />
+          </Button>
         </a>
+
+        <Button
+          color={mobileMenuState.open ? 'white' : 'toxic'}
+          onClick={toggleMobileMenuStateOpen}
+          className={styles.btn}
+        >
+          <AnimatedCross open={mobileMenuState.open} />
+        </Button>
       </div>
+
+      <MobileMenu
+        open={mobileMenuState.open}
+        onSetMobileMenuState={setMobileMenuState}
+      />
     </div>
   );
 };

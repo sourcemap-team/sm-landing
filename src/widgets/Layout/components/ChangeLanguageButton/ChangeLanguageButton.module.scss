@@ -12,3 +12,13 @@
     box-shadow: 0 0 20px 10px rgba(255,255,255, 0.5);
   }
 }
+
+.btn.bordered {
+  border: 1px solid var(--misc);
+  border-radius: 60px;
+
+  &:hover {
+    border-color: var(--dark);
+    box-shadow: none;
+  }
+}

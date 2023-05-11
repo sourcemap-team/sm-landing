@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useLayoutEffect, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 
 const clamp = (value: number) => Math.max(0, value);
 
