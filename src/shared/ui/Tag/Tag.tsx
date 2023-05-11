@@ -1,14 +1,14 @@
 import styles from './Tag.module.scss';
 
-import React, { ReactNode } from 'react';
+import React, { FC, PropsWithChildren } from 'react';
 import cx from 'classnames';
 
-type TagProps = {
+type TagProps = PropsWithChildren & {
   primary?: boolean;
   className?: string;
-  children: ReactNode;
 };
-export const Tag = ({ children, primary = false, className }: TagProps) => {
+
+export const Tag: FC<TagProps> = ({ children, primary = false, className }) => {
   return (
     <span
       className={cx(

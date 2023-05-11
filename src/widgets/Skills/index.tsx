@@ -3,8 +3,8 @@ import styles from './Skills.module.scss';
 import React from 'react';
 import cx from 'classnames';
 
+import { useLocale } from '@/shared/hooks';
 import { Tag } from '@/shared/ui';
-import { useRouter } from 'next/router';
 
 import { SKILLS } from './skills';
 
@@ -14,12 +14,11 @@ const localeTitleMap = new Map([
 ]);
 
 export const Skills = () => {
-  const { locale } = useRouter();
-  const lang: string = locale || 'en';
+  const locale = useLocale();
 
   return (
     <>
-      <h2 className="title">{localeTitleMap.get(lang)}</h2>
+      <h2 className="title">{localeTitleMap.get(locale)}</h2>
 
       <ul className={styles.skills}>
         {SKILLS.map((s) => (

@@ -1,7 +1,8 @@
 import styles from './Hero.module.scss';
 
 import React from 'react';
-import { useRouter } from 'next/router';
+
+import { useLocale } from '@/shared/hooks';
 
 import { Icon } from '@/shared/ui/Icon';
 
@@ -24,8 +25,7 @@ const localeDescMap = new Map([
 ]);
 
 export const Hero = () => {
-  const { locale } = useRouter();
-  const lang: string = locale || 'en';
+  const locale = useLocale();
 
   return (
     <div className={styles.container}>
@@ -33,7 +33,7 @@ export const Hero = () => {
         <Icon name="logo" width={49} height={56} />
         <span className={styles.title}>SOURCEMAP.PRO</span>
       </h1>
-      <p className={styles.info}>{localeDescMap.get(lang)}</p>
+      <p className={styles.info}>{localeDescMap.get(locale)}</p>
     </div>
   );
 };

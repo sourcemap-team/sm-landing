@@ -4,8 +4,9 @@ import React, { FC } from 'react';
 
 import { Tag } from '@/shared/ui';
 
-import type { Project } from '../../data';
-import { useRouter } from 'next/router';
+import { useLocale } from '@/shared/hooks';
+
+import { Project } from '../../data';
 
 const textMap = new Map([
   ['en', 'View result'],
@@ -18,9 +19,8 @@ export type ProjectCardProps = {
 };
 
 export const ProjectCard: FC<ProjectCardProps> = ({ project, className }) => {
-  const { locale } = useRouter();
+  const locale = useLocale();
   const { title } = project;
-  const lang: string = locale || 'en';
 
   return (
     <article className={className}>
@@ -29,7 +29,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({ project, className }) => {
           <h3 className={styles.title}>
             {title} <span className={styles.date}>{project.date}</span>
           </h3>
-          <p className={styles.desc}>{project.about[lang]}</p>
+          <p className={styles.desc}>{project.about[locale]}</p>
           <a
             href={project.link}
             target="_blank"
@@ -39,7 +39,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({ project, className }) => {
             <button className={styles.btn}>
               <img src="/icons/arrow-right.svg" alt="Arrow Right" />
             </button>
-            <span className={styles.linkText}>{textMap.get(lang)}</span>
+            <span className={styles.linkText}>{textMap.get(locale)}</span>
           </a>
           <ul className={styles.tags}>
             {project.tags.map((t) => (

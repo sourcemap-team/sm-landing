@@ -2,7 +2,6 @@ import styles from './HomePage.module.scss';
 
 import React from 'react';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 
 import {
   Activity,
@@ -14,10 +13,10 @@ import {
   Skills,
 } from '@/widgets';
 
+import { useLocale } from '@/shared/hooks';
+
 const META: {
-  [key: string]: {
-    [key: string]: string;
-  };
+  [key: string]: Record<string, string>;
 } = {
   title: {
     ru: 'Sourcemap.pro, команда аутсорс разработчиков',
@@ -30,17 +29,16 @@ const META: {
 };
 
 const Home = () => {
-  const router = useRouter();
-  const lang: string = router.locale || '';
+  const locale = useLocale();
 
   return (
     <>
       <Head>
-        <title>{META.title[lang]}</title>
-        <meta property="og:title" content={META.title[lang]} key="title" />
+        <title>{META.title[locale]}</title>
+        <meta property="og:title" content={META.title[locale]} key="title" />
         <meta
           property="og:description"
-          content={META.description[lang]}
+          content={META.description[locale]}
           key="description"
         />
         <meta
@@ -50,13 +48,13 @@ const Home = () => {
         />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={META.title[lang]} />
+        <meta name="twitter:title" content={META.title[locale]} />
         <meta name="twitter:site" content="@sourcemap.pro" />
         <meta
           name="twitter:image"
           content="https://sourcemap.pro/images/share/sourcemap-social-share.jpg"
         />
-        <meta name="twitter:image:alt" content={META.title[lang]} />
+        <meta name="twitter:image:alt" content={META.title[locale]} />
 
         <script
           id="yandex-metrika"
