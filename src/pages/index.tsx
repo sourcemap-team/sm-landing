@@ -11,6 +11,8 @@ import {
   Projects,
   Services,
   Skills,
+  Reviews,
+  Footer,
 } from '@/widgets';
 
 import { useLocale } from '@/shared/hooks';
@@ -111,8 +113,10 @@ const Home = () => {
           <Skills />
           <Activity />
         </div>
+        <Reviews />
         <Pricing />
         <Contact />
+        <Footer />
       </main>
     </>
   );

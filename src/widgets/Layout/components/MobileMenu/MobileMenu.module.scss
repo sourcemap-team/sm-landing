@@ -80,6 +80,10 @@
 }
 
 .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   padding: 18px;
   border-radius: 100px;
 }
@@ -87,6 +91,6 @@
 .localeBtn {
   align-items: center;
   justify-content: center;
-  column-gap: 10px;
-  max-width: 104px;
+  column-gap: 8px;
+  width: 104px;
 }

@@ -4,8 +4,6 @@ import React from 'react';
 
 import { useLocale } from '@/shared/hooks';
 
-import { Icon } from '@/shared/ui';
-
 const localeDescMap = new Map([
   [
     'en',
@@ -29,10 +27,6 @@ export const Hero = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.logo}>
-        <Icon name="logo" width={49} height={56} />
-        <span className={styles.title}>SOURCEMAP.PRO</span>
-      </h1>
       <p className={styles.info}>{localeDescMap.get(locale)}</p>
     </div>
   );

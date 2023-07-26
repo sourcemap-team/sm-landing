@@ -6,3 +6,5 @@ export { Skills } from './Skills';
 export { Activity } from './Activity/Activity';
 export { Contact } from './Contact/Contact';
 export { Layout } from './Layout/Layout';
+export { Reviews } from './Reviews/Reviews';
+export { Footer } from './Footer/Footer';

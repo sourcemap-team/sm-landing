@@ -10,17 +10,18 @@
 }
 
 .content {
-  max-width: 952px;
+  max-width: inherit;
   margin: 0 auto;
   width: 100%;
-  padding: 30px 0 50px;
+  padding: 76px 34px 44px;
 
   @media screen and (min-width: $desktop-xl) {
     max-width: 1440px;
   }
 
   @media screen and (max-width: $desktop-m) {
-    padding: 105px 0 94px;
+    max-width: 100%;
+    padding: 96px 20px 94px;
   }
 
   @media screen and (max-width: $tablet) {
@@ -33,164 +34,60 @@
 }
 
 .nav {
-  $top: 30px;
+  $top: 0;
   position: fixed;
   top: $top;
+
   display: flex;
-  flex-direction: column;
-  padding-left: 40px;
-  height: calc(100% - $top * 2);
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  max-width: inherit;
+  padding: 14px 34px;
+
+  background: var(--white);
+  box-shadow: 0 0 0 100vmax var(--white);
+  -webkit-clip-path: inset(0 -100vmax);
+  clip-path: inset(0 -100vmax);
 
   @media screen and (max-width: $desktop-m) {
     display: none;
   }
 }
 
-.menu, .langButton {
+.right, .left {
   display: flex;
-  gap: 12px;
+  align-items: center;
 }
 
-.menu {
-  flex-direction: column;
-  padding: 10px 20px;
-  background: var(--white);
-  color: var(--font-dark);
-  border-radius: 10px;
-  transition: 300ms;
-  cursor: pointer;
+.left {
+  gap: 60px;
+}
 
-  &:hover {
-    box-shadow: 0 0 20px 10px rgba(255,255,255, 0.5);
-  }
+.right {
+  gap: 48px;
 }
 
 .langButton {
-  position: absolute;
-  bottom: 0;
-  align-items: center;
-}
-
-.link {
-  transition: 300ms;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 17px;
-  line-height: 23px;
-  color: var(--font-dark);
-
-  &:hover, &[aria-current='true'] {
-    color: var(--dark);
-  }
-}
-
-.action {
-  position: fixed;
-  top: 30px;
   display: flex;
   align-items: center;
-  max-width: inherit;
-  width: 100%;
-  margin: 0 auto;
-  justify-content: flex-end;
+  gap: 4px;
+}
+
+.mobileAction {
+  display: none;
 
   @media screen and (max-width: $desktop-m) {
+    position: fixed;
     top: 0;
     display: flex;
     justify-content: space-between;
-    padding: 13px 20px;
+    align-items: center;
+    max-width: inherit;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 10px 14px;
     background: var(--white);
-  }
-
-  @media screen and (max-width: $tablet) {
-    padding: 8px 10px;
-  }
-}
-
-.actionLink {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-right: 20px;
-  padding-left: 20px;
-  border-radius: 10px 36px 36px 10px;
-  background: var(--white);
-  color: var(--font-dark);
-  overflow: hidden;
-  transition: 300ms;
-
-  &:hover {
-    color: var(--dark);
-    box-shadow: 0 0 20px 10px rgba(255,255,255, 0.5);
-
-    .button {
-      box-shadow: 0 0 20px 110px var(--primary);
-    }
-  }
-
-  @media screen and (max-width: $desktop-m) {
-    display: none;
-  }
-}
-
-.button {
-  width: 60px;
-  height: 48px;
-  background: var(--primary);
-  border-radius: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: 300ms;
-
-  @media screen and (max-width: $tablet) {
-    width: 35px;
-    height: 28px;
-  }
-}
-
-.actionText {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 17px;
-  line-height: 23px;
-
-  @media screen and (max-width: $tablet) {
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 20px;
-  }
-}
-
-.logo {
-  display: none;
-  padding-top: 5px;
-  font-family: "PP Neue Machina Plain", sans-serif;
-  font-size: 31px;
-  line-height: 43px;
-
-  @media screen and (max-width: $desktop-m) {
-    display: block;
-  }
-
-  @media screen and (max-width: $tablet) {
-    padding-top: 2px;
-    font-size: 19px;
-    line-height: 26px;
-  }
-}
-
-.btn {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  padding-bottom: 5px;
-  border-radius: 50%;
-
-  @media screen and (max-width: $desktop-m) {
-    display: flex;
   }
 }

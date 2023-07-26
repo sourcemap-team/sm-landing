@@ -1,0 +1,39 @@
+.actionLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 18px 10px;
+  border-radius: 500px;
+  background: var(--primary);
+  color: var(--dark);
+  overflow: hidden;
+  transition: 300ms;
+  cursor: pointer;
+
+  &:hover {
+    background: #f6f6f6;
+  }
+
+  @media screen and (max-width: $desktop-m) {
+    display: none;
+  }
+
+  @media screen and (max-width: $tablet) {
+    display: none;
+  }
+}
+
+.actionText {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 23px;
+  letter-spacing: -0.48px;
+
+  @media screen and (max-width: $tablet) {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+  }
+}
