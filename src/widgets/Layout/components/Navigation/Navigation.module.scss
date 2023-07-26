@@ -1,0 +1,27 @@
+.menu {
+  display: flex;
+  gap: 24px;
+  color: var(--font-dark);
+  border-radius: 10px;
+  transition: 300ms;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 0 20px 10px rgba(255,255,255, 0.5);
+  }
+}
+
+.link {
+  transition: 300ms;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 23px;
+  letter-spacing: -0.48px;
+  color: var(--font-dark);
+
+
+  &:hover, &[aria-current='true'] {
+    color: var(--dark);
+  }
+}

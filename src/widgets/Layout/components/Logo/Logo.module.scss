@@ -1,0 +1,13 @@
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  .logo {
+    display: block;
+    padding-top: 4px;
+    font-family: "PP Neue Machina Plain", sans-serif;
+    line-height: 20px;
+    font-size: 25px;
+  }
+}

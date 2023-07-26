@@ -1,12 +1,12 @@
 import styles from './MobileMenu.module.scss';
-
-import { Dispatch, FC, SetStateAction, useEffect } from 'react';
 import cx from 'classnames';
+
+import React, { Dispatch, FC, SetStateAction, useEffect } from 'react';
 
 import { SocialLinks } from '@/features';
 
 import { useLocale, useScrollSpy } from '@/shared/hooks';
-import { Button } from '@/shared/ui';
+import { Button, Icon } from '@/shared/ui';
 
 import { MENU_ITEMS, MENU_IDS } from '../../menu';
 import { ChangeLanguageButton } from '../ChangeLanguageButton';
@@ -75,6 +75,7 @@ export const MobileMenu: FC<MobileMenuProps> = ({
       <div className={styles.actions}>
         <a href="#contact" className={styles.contactLink}>
           <Button onClick={closeMobileMenu} className={styles.btn}>
+            <Icon name="telegramLarge" width={24} height={24} />
             {buttonLocaleMap.get(locale)}
           </Button>
         </a>

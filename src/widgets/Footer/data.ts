@@ -28,8 +28,3 @@ export const LINKS: Link[] = [
     href: 'https://github.com/sourcemap-team',
   },
 ];
-
-export const buttonLocaleMap = new Map([
-  ['en', 'Contact Us'],
-  ['ru', 'Написать нам'],
-]);

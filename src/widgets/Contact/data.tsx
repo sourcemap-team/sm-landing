@@ -20,46 +20,6 @@ type Contact = {
 export const CONTACTS: Contact[] = [
   {
     name: {
-      en: 'Roman Babanov',
-      ru: 'Роман Бабанов',
-    },
-    role: {
-      en: 'CEO',
-      ru: 'CEO',
-    },
-    img: '/images/contacts/Roman.png',
-    links: [
-      {
-        id: 1,
-        icon: {
-          name: 'linkedin',
-          width: 20,
-          height: 21,
-        },
-        href: 'https://www.linkedin.com/in/roman-babanov/',
-      },
-      {
-        id: 2,
-        icon: {
-          name: 'telegram',
-          width: 22,
-          height: 20,
-        },
-        href: 'https://t.me/c_o_o_n',
-      },
-      {
-        id: 3,
-        icon: {
-          name: 'facebook',
-          width: 20,
-          height: 20,
-        },
-        href: 'https://www.facebook.com/profile.php?id=100016170887764',
-      },
-    ],
-  },
-  {
-    name: {
       en: 'Sergey Ogurechnikov',
       ru: 'Сергей Огуречников',
     },
@@ -132,24 +92,3 @@ export const CONTACT_INFO: Info = {
     ),
   },
 };
-
-export const LINKS: Link[] = [
-  {
-    id: 1,
-    icon: {
-      name: 'linkedin',
-      width: 20,
-      height: 21,
-    },
-    href: 'https://www.linkedin.com/company/sourcemap-pro/',
-  },
-  {
-    id: 2,
-    icon: {
-      name: 'github',
-      width: 20,
-      height: 20,
-    },
-    href: 'https://github.com/sourcemap-team',
-  },
-];

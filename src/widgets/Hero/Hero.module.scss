@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  min-height: 596px;
+  min-height: 620px;
   padding: 30px 30px 44px;
   background: linear-gradient(
       180deg,
@@ -13,8 +13,8 @@
     linear-gradient(0deg, rgba(0, 0, 0, 0.21), rgba(0, 0, 0, 0.21)),
     url('/images/hero.png');
   background-repeat: no-repeat;
-  background-size: 952px auto;
-  border-radius: 10px;
+  background-size: auto;
+  border-radius: 16px;
 
   @media screen and (max-width: $tablet) {
     background-position: 70% 10%;
@@ -25,22 +25,6 @@
   @media screen and (min-width: $desktop-xl) {
     padding: 55px 75px;
     background-size: auto;
-    min-height: 935px;
-  }
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  column-gap: 12px;
-  font-family: 'PP Neue Machina Plain', sans-serif;
-  font-size: 32px;
-  line-height: 25px;
-  color: var(--white);
-
-  @media screen and (max-width: $tablet) {
-    font-size: 25px;
-    line-height: 29px;
   }
 }
 
