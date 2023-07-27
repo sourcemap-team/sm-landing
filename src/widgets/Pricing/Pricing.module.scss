@@ -31,6 +31,7 @@
   margin-top: 36px;
   display: flex;
   gap: 32px;
+  justify-content: space-between;
 
   @media screen and (max-width: $desktop-m) {
     margin-top: 121px;
@@ -110,7 +111,7 @@
   font-family: 'PP NeueMachina Inktrap', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 110px;
+  font-size: 80px;
   line-height: 121px;
   color: #b3ff01;
 
@@ -182,8 +183,9 @@
   text-transform: uppercase;
   font-family: 'DRAB', sans-serif;
   font-weight: 400;
-  font-size: 76px;
+  font-size: 55px;
   line-height: 84px;
+
 
   @media screen and (max-width: $tablet) {
     font-size: 40px;
@@ -195,8 +197,9 @@
   text-transform: uppercase;
   font-family: 'DRAB', sans-serif;
   font-weight: 400;
-  font-size: 76px;
+  font-size: 55px;
   line-height: 84px;
+
 
   @media screen and (max-width: $tablet) {
     font-size: 40px;
