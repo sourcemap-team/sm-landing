@@ -73,8 +73,8 @@ export const MobileMenu: FC<MobileMenuProps> = ({
       </a>
 
       <div className={styles.actions}>
-        <a href="#contact" className={styles.contactLink}>
-          <Button onClick={closeMobileMenu} className={styles.btn}>
+        <a href="https://t.me/ogurechnikov" className={styles.contactLink}>
+          <Button className={styles.btn}>
             <Icon name="telegramLarge" width={24} height={24} />
             {buttonLocaleMap.get(locale)}
           </Button>

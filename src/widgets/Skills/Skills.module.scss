@@ -1,11 +1,12 @@
 .skills {
   margin-top: 24px;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
   gap: 10px;
 
   @media screen and (max-width: $tablet) {
     gap: 15px;
+    flex-wrap: wrap;
   }
 
   @media screen and (min-width: $desktop-xl) {
@@ -15,7 +16,7 @@
 
 .skill {
   box-sizing: border-box;
-  max-width: 230px;
+  max-width: 325px;
   width: 100%;
   padding: 15px;
   border-radius: 10px;
