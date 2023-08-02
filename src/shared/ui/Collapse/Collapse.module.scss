@@ -47,7 +47,7 @@
   opacity: 0;
 
   @media screen and (max-width: $tablet) {
-    width: auto;
+    width: 5vw;
     opacity: 1;
     margin-right: 16px;
     fill: var(--dark);

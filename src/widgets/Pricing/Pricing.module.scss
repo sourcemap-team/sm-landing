@@ -30,7 +30,6 @@
 .info {
   margin-top: 36px;
   display: flex;
-  gap: 32px;
   justify-content: space-between;
 
   @media screen and (max-width: $desktop-m) {
@@ -39,14 +38,12 @@
 
   @media screen and (max-width: $tablet) {
     margin: 16px auto 0;
-    gap: 10px;
     text-align: center;
     flex-direction: column;
     max-width: 340px;
   }
 
   @media screen and (min-width: $desktop-xl) {
-    gap: 275px;
     align-items: flex-end;
   }
 }
@@ -54,11 +51,12 @@
 .block {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  width: 50%;
   min-height: 338px;
 
   @media screen and (max-width: $tablet){
-    min-height: auto;
+  width: 100%;
+  min-height: auto;
   }
 }
 

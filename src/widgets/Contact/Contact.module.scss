@@ -1,10 +1,10 @@
 .container {
-  padding: 95px 34px;
+  padding: 95px 0;
   display: flex;
   justify-content: space-between;
 
   @media screen and (max-width: $desktop-m) {
-    padding: 80px 10px;
+    padding: 80px 0;
   }
 
   @media screen and (max-width: $tablet) {
