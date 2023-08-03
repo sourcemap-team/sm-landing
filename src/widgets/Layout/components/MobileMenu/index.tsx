@@ -1,11 +1,17 @@
 import styles from './MobileMenu.module.scss';
 import cx from 'classnames';
 
-import React, { Dispatch, FC, SetStateAction, useEffect } from 'react';
+import React, {
+  Dispatch,
+  FC,
+  SetStateAction,
+  useEffect,
+  MouseEvent,
+} from 'react';
 
 import { SocialLinks } from '@/features';
 
-import { useLocale, useScrollSpy } from '@/shared/hooks';
+import { useLocale, useScrollSpy, useOffsetScroll } from '@/shared/hooks';
 import { Button, Icon } from '@/shared/ui';
 
 import { MENU_ITEMS, MENU_IDS } from '../../menu';
@@ -17,12 +23,15 @@ type MobileMenuProps = {
   onSetMobileMenuState: Dispatch<SetStateAction<{ open: boolean }>>;
 };
 
+const HEADER_HEIGHT_MOBILE = 70;
+
 export const MobileMenu: FC<MobileMenuProps> = ({
   open = false,
   onSetMobileMenuState,
 }) => {
   const activeId = useScrollSpy(MENU_IDS, 100);
   const locale = useLocale();
+  const handleLinkClickMobile = useOffsetScroll(HEADER_HEIGHT_MOBILE);
 
   const closeMobileMenu = () => {
     onSetMobileMenuState((prev) => ({ ...prev, open: false }));
@@ -51,7 +60,10 @@ export const MobileMenu: FC<MobileMenuProps> = ({
               <a
                 href={item.href}
                 aria-current={item.id === activeId}
-                onClick={closeMobileMenu}
+                onClick={(e: MouseEvent<HTMLElement>) => {
+                  closeMobileMenu();
+                  handleLinkClickMobile(e, item.id);
+                }}
                 className={styles.anchor}
               >
                 {item.name[locale]}
@@ -73,7 +85,11 @@ export const MobileMenu: FC<MobileMenuProps> = ({
       </a>
 
       <div className={styles.actions}>
-        <a href="https://t.me/ogurechnikov" className={styles.contactLink}>
+        <a
+          href="https://t.me/ogurechnikov"
+          target="_blank"
+          className={styles.contactLink}
+        >
           <Button className={styles.btn}>
             <Icon name="telegramLarge" width={24} height={24} />
             {buttonLocaleMap.get(locale)}
