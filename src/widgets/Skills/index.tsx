@@ -9,8 +9,8 @@ import { Tag } from '@/shared/ui';
 import { SKILLS } from './skills';
 
 const localeTitleMap = new Map([
-  ['en', 'What we do'],
-  ['ru', 'Что делаем'],
+  ['en', 'Our stack'],
+  ['ru', 'Наш стек'],
 ]);
 
 export const Skills = () => {

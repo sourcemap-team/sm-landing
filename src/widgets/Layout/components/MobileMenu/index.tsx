@@ -86,7 +86,7 @@ export const MobileMenu: FC<MobileMenuProps> = ({
 
       <div className={styles.actions}>
         <a
-          href="https://t.me/ogurechnikov"
+          href="https://t.me/sourcemap_pro"
           target="_blank"
           className={styles.contactLink}
         >

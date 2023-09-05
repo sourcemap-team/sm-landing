@@ -25,8 +25,8 @@ export const MENU_ITEMS: Menu[] = [
   },
   {
     name: {
-      en: 'What we do',
-      ru: 'Что делаем',
+      en: 'Stack',
+      ru: 'Стек',
     },
     href: '#skills',
     id: 'skills',
@@ -42,6 +42,6 @@ export const MENU_ITEMS: Menu[] = [
 ];
 
 export const ContactUsBtnLocaleMap = new Map([
-  ['en', 'Contact Us'],
-  ['ru', 'Написать нам'],
+  ['en', 'Discuss my task'],
+  ['ru', 'Обсудить задачу'],
 ]);

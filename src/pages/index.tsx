@@ -21,12 +21,12 @@ const META: {
   [key: string]: Record<string, string>;
 } = {
   title: {
-    ru: 'Sourcemap.pro, команда аутсорс разработчиков',
-    en: 'Sourcemap.pro, outsource developer team',
+    ru: 'Команда разработчиков',
+    en: 'Development team',
   },
   description: {
-    en: 'We create reliable apps using a modern stack',
-    ru: 'Создаём надёжные приложения, используя передовые технологии',
+    en: 'Culture, quality development',
+    ru: 'Культура качественной разработки',
   },
 };
 

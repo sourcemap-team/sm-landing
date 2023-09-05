@@ -13,23 +13,16 @@ export const SKILLS: Skill[] = [
   {
     title: 'Backend',
     primary: true,
-    tags: [
-      'Kotlin',
-      'PostgresSQL',
-      'Spring Boot',
-      'Strapi',
-      'NodeJS',
-      'Hibernate',
-    ],
+    tags: ['Low code', 'Strapi', 'NodeJS', 'Express', 'Mongo DB', 'MySQL'],
   },
   {
     title: 'Devops',
     primary: false,
-    tags: ['Docker', 'Heroku', 'AWS'],
+    tags: ['Docker', 'Heroku', 'AWS', 'Yandex Cloud'],
   },
   {
     title: 'QA',
     primary: false,
-    tags: ['Auto-testing', 'Smoke tests', 'Stress Testing'],
+    tags: ['Auto-testing', 'Smoke tests', 'Stress Testing', 'Cypress'],
   },
 ];

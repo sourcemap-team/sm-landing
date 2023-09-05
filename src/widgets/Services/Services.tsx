@@ -11,8 +11,8 @@ import { useLocale } from '@/shared/hooks';
 import { Collapse } from '@/shared/ui';
 
 const SERVICES_TITLE: ServiceItemTitle = {
-  en: 'Services',
-  ru: 'Услуги',
+  en: 'We develop',
+  ru: 'Мы разрабатываем',
 };
 
 export const Services = () => {

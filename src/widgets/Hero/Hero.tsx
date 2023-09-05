@@ -8,16 +8,15 @@ const localeDescMap = new Map([
   [
     'en',
     <>
-      We create <span className={styles.dedicated}>reliable</span> apps using a
-      <span className={styles.dedicated}>&nbsp;modern</span> stack
+      Culture of&nbsp;<span className={styles.dedicated}>quality</span>
+      <span className={styles.dedicated}>development</span>
     </>,
   ],
   [
     'ru',
     <>
-      Создаём <span className={styles.dedicated}>надёжные&nbsp;</span>
-      приложения, используя&nbsp;
-      <span className={styles.dedicated}>передовые</span> технологии
+      Культура <span className={styles.dedicated}>качественной&nbsp;</span>
+      <span className={styles.dedicated}>разработки</span>
     </>,
   ],
 ]);

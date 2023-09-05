@@ -30,13 +30,13 @@ export const PRICING: Pricing = {
     price: {
       ru: (
         <>
-          3500
+          от 2500
           <span className={styles.priceChar}>
-            <span className={styles.rub}>Р</span>/час
+            <span className={styles.rub}>&nbsp;Р</span>/час
           </span>
         </>
       ),
-      en: <>$50/hour</>,
+      en: <>$35/hour</>,
     },
   },
   fullPrice: {
@@ -51,13 +51,13 @@ export const PRICING: Pricing = {
     price: {
       ru: (
         <>
-          3000
+          от 2000
           <span className={styles.priceChar}>
-            <span className={styles.rub}>Р</span>/час
+            <span className={styles.rub}>&nbsp;Р</span>/час
           </span>
         </>
       ),
-      en: <>$45/hour</>,
+      en: <>from $25/hour</>,
     },
   },
 };

@@ -9,7 +9,7 @@ export const ContactUsButton = () => {
   const locale = useLocale();
   return (
     <a
-      href="https://t.me/ogurechnikov"
+      href="https://t.me/sourcemap_pro"
       target="_blank"
       rel="noopener noreferrer"
       className={styles.actionLink}

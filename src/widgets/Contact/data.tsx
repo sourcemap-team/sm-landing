@@ -20,14 +20,14 @@ type Contact = {
 export const CONTACTS: Contact[] = [
   {
     name: {
-      en: 'Sergey Ogurechnikov',
-      ru: 'Сергей Огуречников',
+      en: 'Roman Babanov',
+      ru: 'Роман Бабанов',
     },
     role: {
-      en: 'Business Developer',
-      ru: 'Business Developer',
+      en: 'IT Expert Developer Consultant',
+      ru: 'Разработчик Эксперт Консультант',
     },
-    img: '/images/contacts/Sergey.png',
+    img: '/images/contacts/Roman.png',
     links: [
       {
         id: 1,
@@ -36,7 +36,7 @@ export const CONTACTS: Contact[] = [
           width: 20,
           height: 21,
         },
-        href: 'https://www.linkedin.com/in/ogurechnikovsl/',
+        href: 'https://www.linkedin.com/in/roman-babanov/',
       },
       {
         id: 2,
@@ -45,7 +45,7 @@ export const CONTACTS: Contact[] = [
           width: 22,
           height: 20,
         },
-        href: 'https://t.me/ogurechnikov',
+        href: 'https://t.me/sourcemap_pro',
       },
       {
         id: 3,
@@ -54,7 +54,7 @@ export const CONTACTS: Contact[] = [
           width: 20,
           height: 20,
         },
-        href: 'https://www.facebook.com/s.ogurechnikov',
+        href: 'https://www.facebook.com/sourcemap.pro/',
       },
     ],
   },
@@ -67,8 +67,8 @@ type Info = {
 
 export const CONTACT_INFO: Info = {
   title: {
-    ru: 'Связаться с нами',
-    en: 'Contact Us',
+    ru: 'Связаться',
+    en: 'Contact',
   },
   text: {
     ru: (

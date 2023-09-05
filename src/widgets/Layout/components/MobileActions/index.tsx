@@ -14,7 +14,7 @@ export const MobileActions = ({ open, onClick }: MobileActionsProps) => {
   return (
     <div className={styles.actionsContainer}>
       <a
-        href="https://t.me/ogurechnikov"
+        href="https://t.me/sourcemap_pro"
         target="_blank"
         rel="noopener noreferrer"
       >

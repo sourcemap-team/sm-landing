@@ -29,12 +29,11 @@ export const Footer = () => {
           <div className={styles.contacts}>
             <p className={styles.text}>Sourcemap Pro Development LLC</p>
             <p className={styles.text}>Kochar 8, Yerevan, Armenia</p>
-            <p className={styles.text}>+341 93 76 94 74</p>
           </div>
 
           <SocialLinks links={LINKS} />
         </div>
-        <p className={styles.text}>© Sourcemap </p>
+        <p className={styles.text}>© Sourcemap 2023 </p>
       </div>
     </div>
   );
