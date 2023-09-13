@@ -1,3 +1,7 @@
+import React from 'react';
+import FlowMapp from './ProjectsComponents/FlowMapp/FlowMapp';
+import Connect from './ProjectsComponents/Connect/Connect';
+
 export type Project = {
   title: string;
   about: Record<string, string>;
@@ -5,6 +9,7 @@ export type Project = {
   date: string;
   img: string;
   tags: string[];
+  comp?: JSX.Element;
 };
 
 export const PROJECTS: Project[] = [
@@ -18,6 +23,11 @@ export const PROJECTS: Project[] = [
     date: '2023',
     img: '/images/projects/flowmapp.png',
     tags: ['React', 'Webpack', 'CSS/SCSS', 'TypeScript'],
+    comp: (
+      <>
+        <FlowMapp />
+      </>
+    ),
   },
   {
     title: 'Connect',
@@ -29,6 +39,11 @@ export const PROJECTS: Project[] = [
     date: '2023',
     img: '/images/projects/connect.png',
     tags: ['Kotlin', 'PostgreSQL', 'PWA', 'React', 'TypeScript'],
+    comp: (
+      <>
+        <Connect />
+      </>
+    ),
   },
   {
     title: 'ShortCast',

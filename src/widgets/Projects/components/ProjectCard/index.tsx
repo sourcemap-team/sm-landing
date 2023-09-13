@@ -31,8 +31,8 @@ export const ProjectCard: FC<ProjectCardProps> = ({ project, className }) => {
           </h3>
           <p className={styles.desc}>{project.about[locale]}</p>
           <a
-            href={project.link}
-            target="_blank"
+            href={`/projects/${title}`}
+            // target="_blank"
             rel="noreferrer"
             className={styles.link}
           >
