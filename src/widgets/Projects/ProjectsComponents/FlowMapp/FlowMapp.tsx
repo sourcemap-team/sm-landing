@@ -1,7 +1,8 @@
 import React from 'react';
+import styles from './FlowMapp.module.css';
 
 const FlowMapp = () => {
-  return <div>FlowMapp</div>;
+  return <></>;
 };
 
 export default FlowMapp;

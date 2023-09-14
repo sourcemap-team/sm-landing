@@ -2,7 +2,6 @@ import React from 'react';
 import { Navigation, Autoplay, Pagination, Mousewheel } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styles from './ProjectComp.module.css';
-import { PROJECTS } from '../data';
 import { Tag } from '@/shared/ui';
 import Image from 'next/image';
 import 'swiper/css';
@@ -70,6 +69,7 @@ const ProjectComp = ({ project }: IProjectCompProps) => {
                       src={image}
                       alt={project?.title}
                       className={styles.img}
+                      style={{ borderRadius: '30px' }}
                       width={897}
                       height={550}
                     />
@@ -80,13 +80,23 @@ const ProjectComp = ({ project }: IProjectCompProps) => {
           ) : (
             <div className={styles.goalImageBlock}>
               <Image
-                src={project?.images?.goalImage}
+                src={project?.images?.sliderContent[0]}
                 alt={project?.title}
-                width={1200}
-                height={735}
+                style={{ borderRadius: '30px' }}
+                width={project?.title === 'Connect' ? 900 : 1200}
+                height={550}
               />
             </div>
           )}
+        </div>
+        <div className={styles.tagsContainer}>
+          <ul className={styles.tags}>
+            {project?.tags?.map((tag) => (
+              <li key={tag}>
+                <Tag>{tag}</Tag>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
 
@@ -100,8 +110,9 @@ const ProjectComp = ({ project }: IProjectCompProps) => {
         <div className={styles.goalImageBlock}>
           <Image
             src={project?.images?.goalImage}
+            style={{ borderRadius: '30px' }}
             alt={project?.title}
-            width={1200}
+            width={project?.title === 'Connect' ? 300 : 1200}
             height={735}
           />
         </div>
@@ -116,13 +127,14 @@ const ProjectComp = ({ project }: IProjectCompProps) => {
         <div className={styles.solutionImageBlock}>
           <Image
             src={project?.images.solutionImage}
+            style={{ borderRadius: '30px' }}
             alt={project?.title}
-            width={1200}
+            width={project?.title === 'Connect' ? 300 : 1200}
             height={735}
           />
         </div>
       </div>
-      {/* <div className={styles.propsCompContainer}>{project?.comp}</div> */}
+      <div className={styles.propsCompContainer}>{project?.comp}</div>
     </div>
   );
 };
