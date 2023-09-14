@@ -11,18 +11,31 @@ import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import SwiperCore from 'swiper';
 import { IProjectCompProps } from './types';
+import { useLocale } from '@/shared/hooks';
+
+const textProjectGoal = new Map([
+  ['en', 'Project goal'],
+  ['ru', 'Цель проекта'],
+]);
+
+const textSolution = new Map([
+  ['en', 'Solution'],
+  ['ru', 'Решение'],
+]);
 
 SwiperCore.use([Pagination, Autoplay, Mousewheel, Navigation]);
 
 const ProjectComp = ({ project }: IProjectCompProps) => {
+  const locale = useLocale();
+
   return (
     <div className={styles.mainContainer}>
       <div className={styles.topBlock}>
         <div className={styles.headerDiv}>
           <div className={styles.imageContainer}>
             <Image
-              src="/logos/flowmapp.png"
-              alt="flowmapp"
+              src={project?.images.logo}
+              alt={project?.title}
               className={styles.img}
               width={69}
               height={69}
@@ -31,122 +44,85 @@ const ProjectComp = ({ project }: IProjectCompProps) => {
           <h3 className={styles.titleHeader}>{project?.title}</h3>
         </div>
         <div className={styles.sliderContainer}>
-          <Swiper
-            loop={false}
-            modules={[Navigation, Autoplay, Pagination, Mousewheel]}
-            slidesPerView={1.37}
-            spaceBetween={10}
-            speed={2000}
-            navigation
-            mousewheel={true}
-            pagination={{
-              dynamicBullets: true,
-              clickable: true,
-            }}
-            scrollbar={{ draggable: true }}
-            autoplay={{
-              delay: 2000,
-              disableOnInteraction: true,
-            }}
-          >
-            <SwiperSlide>
-              <div className={styles.swiperBlock}>
-                <Image
-                  src="/images/projects/connect.png"
-                  alt="flowmapp"
-                  className={styles.img}
-                  width={897}
-                  height={550}
-                />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className={styles.swiperBlock}>
-                <Image
-                  src="/images/projects/flowmapp.png"
-                  alt="flowmapp"
-                  className={styles.img}
-                  width={897}
-                  height={550}
-                />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className={styles.swiperBlock}>
-                <Image
-                  src="/images/projects/feexle.png"
-                  alt="flowmapp"
-                  className={styles.img}
-                  width={897}
-                  height={550}
-                />
-              </div>
-            </SwiperSlide>
-          </Swiper>
-        </div>
-        <div className={styles.tagsContainer}>
-          <ul className={styles.tags}>
-            {project?.tags?.map((tag) => (
-              <li key={tag}>
-                <Tag>{tag}</Tag>
-              </li>
-            ))}
-          </ul>
-          {/* <h1>{project?.comp}</h1> */}
+          {project?.images?.sliderContent?.length > 1 ? (
+            <Swiper
+              loop={false}
+              modules={[Navigation, Autoplay, Pagination, Mousewheel]}
+              slidesPerView={1.37}
+              spaceBetween={10}
+              speed={2000}
+              navigation
+              mousewheel={true}
+              pagination={{
+                dynamicBullets: true,
+                clickable: true,
+              }}
+              scrollbar={{ draggable: true }}
+              autoplay={{
+                delay: 2000,
+                disableOnInteraction: true,
+              }}
+            >
+              {project?.images?.sliderContent?.map((image, index) => (
+                <SwiperSlide key={index}>
+                  <div className={styles.swiperBlock}>
+                    <Image
+                      src={image}
+                      alt={project?.title}
+                      className={styles.img}
+                      width={897}
+                      height={550}
+                    />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          ) : (
+            <div className={styles.goalImageBlock}>
+              <Image
+                src={project?.images?.goalImage}
+                alt={project?.title}
+                width={1200}
+                height={735}
+              />
+            </div>
+          )}
         </div>
       </div>
+
       <div className={styles.goalBlock}>
         <div className={styles.goalHeaderBlock}>
-          <h1 className={styles.goalHeader}>Project goal</h1>
+          <h1 className={styles.goalHeader}>{textProjectGoal.get(locale)}</h1>
         </div>
         <div className={styles.goalContentBlock}>
-          <p>
-            The client come to me with a request to "help deploy the application
-            to prod." The current version had numerous bugs, and features were
-            taking an exceedingly long time to release, preventing the team from
-            going live for about a year.The client come to me with a request to
-            "help deploy the application to prod." The current version had
-            numerous bugs, and features were taking an exceedingly long time to
-            release, preventing the team from going live for about a year.The
-            client come to me with a request to "help deploy the application to
-            prod." The current version had numerous bugs, and features were
-            taking an exceedingly long time to release, preventing the team from
-            going live for about a year.
-          </p>
+          <p>{project?.projectGoal[locale]}</p>
         </div>
         <div className={styles.goalImageBlock}>
           <Image
-            src="/images/projectGoalsImages/Flowmapp.png"
-            alt="flowmapp"
+            src={project?.images?.goalImage}
+            alt={project?.title}
             width={1200}
             height={735}
           />
         </div>
       </div>
-      <div className={styles.goalBlock}>
-        <div className={styles.goalHeaderBlock}>
-          <h1 className={styles.goalHeader}>Solution</h1>
+      <div className={styles.solutionBlock}>
+        <div className={styles.solutionHeaderBlock}>
+          <h1 className={styles.solutionHeader}>{textSolution.get(locale)}</h1>
         </div>
-        <div className={styles.goalContentBlock}>
-          <p>
-            I was joined the project, conducted an analysis of the existing
-            architecture, which turned out to be quite intricate and convoluted.
-            However, my initial priority was to get the product deployed, with
-            plans to later refactor both the frontend and backend components.
-            After successfully releasing the product, I spent the next six
-            months with my team rewriting and enhancing the client-side portion,
-            preparing for the release of version 3.
-          </p>
+        <div className={styles.solutionContentBlock}>
+          <p>{project?.solution[locale]}</p>
         </div>
-        <div className={styles.goalImageBlock}>
+        <div className={styles.solutionImageBlock}>
           <Image
-            src="/images/projects/flowmapp.png"
-            alt="flowmapp"
+            src={project?.images.solutionImage}
+            alt={project?.title}
             width={1200}
             height={735}
           />
         </div>
       </div>
+      {/* <div className={styles.propsCompContainer}>{project?.comp}</div> */}
     </div>
   );
 };

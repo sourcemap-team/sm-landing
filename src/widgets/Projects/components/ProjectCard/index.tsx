@@ -7,6 +7,7 @@ import { Tag } from '@/shared/ui';
 import { useLocale } from '@/shared/hooks';
 
 import { Project } from '../../data';
+import Link from 'next/link';
 
 const textMap = new Map([
   ['en', 'View result'],
@@ -21,6 +22,7 @@ export type ProjectCardProps = {
 export const ProjectCard: FC<ProjectCardProps> = ({ project, className }) => {
   const locale = useLocale();
   const { title } = project;
+//   console.log(project.images.title);
 
   return (
     <article className={className}>
@@ -30,9 +32,8 @@ export const ProjectCard: FC<ProjectCardProps> = ({ project, className }) => {
             {title} <span className={styles.date}>{project.date}</span>
           </h3>
           <p className={styles.desc}>{project.about[locale]}</p>
-          <a
+          <Link
             href={`/projects/${title}`}
-            // target="_blank"
             rel="noreferrer"
             className={styles.link}
           >
@@ -40,7 +41,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({ project, className }) => {
               <img src="/icons/arrow-right.svg" alt="Arrow Right" />
             </button>
             <span className={styles.linkText}>{textMap.get(locale)}</span>
-          </a>
+          </Link>
           <ul className={styles.tags}>
             {project.tags.map((t) => (
               <li key={t}>
@@ -50,7 +51,11 @@ export const ProjectCard: FC<ProjectCardProps> = ({ project, className }) => {
           </ul>
         </div>
         <div className={styles.imgWrap}>
-          <img src={project.img} alt={title} className={styles.img} />
+          <img
+            src={project?.images?.title}
+            alt={title}
+            className={styles.img}
+          />
         </div>
       </div>
     </article>
