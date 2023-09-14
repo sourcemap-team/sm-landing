@@ -15,7 +15,6 @@ import { IProjectCompProps } from './types';
 SwiperCore.use([Pagination, Autoplay, Mousewheel, Navigation]);
 
 const ProjectComp = ({ project }: IProjectCompProps) => {
-  console.log(project);
   return (
     <div className={styles.mainContainer}>
       <div className={styles.topBlock}>
@@ -93,7 +92,59 @@ const ProjectComp = ({ project }: IProjectCompProps) => {
               </li>
             ))}
           </ul>
-          <h1>{project?.comp}</h1>
+          {/* <h1>{project?.comp}</h1> */}
+        </div>
+      </div>
+      <div className={styles.goalBlock}>
+        <div className={styles.goalHeaderBlock}>
+          <h1 className={styles.goalHeader}>Project goal</h1>
+        </div>
+        <div className={styles.goalContentBlock}>
+          <p>
+            The client come to me with a request to "help deploy the application
+            to prod." The current version had numerous bugs, and features were
+            taking an exceedingly long time to release, preventing the team from
+            going live for about a year.The client come to me with a request to
+            "help deploy the application to prod." The current version had
+            numerous bugs, and features were taking an exceedingly long time to
+            release, preventing the team from going live for about a year.The
+            client come to me with a request to "help deploy the application to
+            prod." The current version had numerous bugs, and features were
+            taking an exceedingly long time to release, preventing the team from
+            going live for about a year.
+          </p>
+        </div>
+        <div className={styles.goalImageBlock}>
+          <Image
+            src="/images/projectGoalsImages/Flowmapp.png"
+            alt="flowmapp"
+            width={1200}
+            height={735}
+          />
+        </div>
+      </div>
+      <div className={styles.goalBlock}>
+        <div className={styles.goalHeaderBlock}>
+          <h1 className={styles.goalHeader}>Solution</h1>
+        </div>
+        <div className={styles.goalContentBlock}>
+          <p>
+            I was joined the project, conducted an analysis of the existing
+            architecture, which turned out to be quite intricate and convoluted.
+            However, my initial priority was to get the product deployed, with
+            plans to later refactor both the frontend and backend components.
+            After successfully releasing the product, I spent the next six
+            months with my team rewriting and enhancing the client-side portion,
+            preparing for the release of version 3.
+          </p>
+        </div>
+        <div className={styles.goalImageBlock}>
+          <Image
+            src="/images/projects/flowmapp.png"
+            alt="flowmapp"
+            width={1200}
+            height={735}
+          />
         </div>
       </div>
     </div>
