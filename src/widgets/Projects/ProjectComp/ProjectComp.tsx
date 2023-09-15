@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navigation, Autoplay, Pagination, Mousewheel } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import styles from './ProjectComp.module.css';
+import styles from './ProjectComp.module.scss';
 import { Tag } from '@/shared/ui';
 import Image from 'next/image';
 import 'swiper/css';
@@ -11,6 +11,7 @@ import 'swiper/css/autoplay';
 import SwiperCore from 'swiper';
 import { IProjectCompProps } from './types';
 import { useLocale } from '@/shared/hooks';
+import { isMobile } from 'react-device-detect';
 
 const textProjectGoal = new Map([
   ['en', 'Project goal'],
@@ -45,9 +46,15 @@ const ProjectComp = ({ project }: IProjectCompProps) => {
         <div className={styles.sliderContainer}>
           {project?.images?.sliderContent?.length > 1 ? (
             <Swiper
+              style={
+                project?.title === 'Invest Allocator'
+                  ? { marginTop: `80px` }
+                  : {}
+              }
               loop={false}
+              className={styles.swiper}
               modules={[Navigation, Autoplay, Pagination, Mousewheel]}
-              slidesPerView={1.37}
+              slidesPerView={isMobile ? 1 : 1.37}
               spaceBetween={10}
               speed={2000}
               navigation
@@ -81,17 +88,19 @@ const ProjectComp = ({ project }: IProjectCompProps) => {
               ))}
             </Swiper>
           ) : (
-            <div className={styles.goalImageBlock}>
+            <div
+              className={
+                project?.title === 'Connect'
+                  ? styles.goalImageConnectBlock
+                  : styles.goalImageBlock
+              }
+            >
               <Image
                 src={project?.images?.sliderContent[0]}
                 alt={project?.title}
-                style={{
-                  borderRadius: '30px',
-                  border: '0.5px solid grey',
-                  marginRight: '50px',
-                }}
                 width={project?.title === 'Connect' ? 900 : 1200}
                 height={550}
+                style={{ borderRadius: '30px' }}
               />
             </div>
           )}
