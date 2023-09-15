@@ -68,8 +68,11 @@ const ProjectComp = ({ project }: IProjectCompProps) => {
                     <Image
                       src={image}
                       alt={project?.title}
-                      className={styles.img}
-                      style={{ borderRadius: '30px' }}
+                      className={styles.swiperSlide}
+                      style={{
+                        borderRadius: '30px',
+                        border: '0.5px solid grey',
+                      }}
                       width={897}
                       height={550}
                     />
@@ -82,7 +85,11 @@ const ProjectComp = ({ project }: IProjectCompProps) => {
               <Image
                 src={project?.images?.sliderContent[0]}
                 alt={project?.title}
-                style={{ borderRadius: '30px' }}
+                style={{
+                  borderRadius: '30px',
+                  border: '0.5px solid grey',
+                  marginRight: '50px',
+                }}
                 width={project?.title === 'Connect' ? 900 : 1200}
                 height={550}
               />
@@ -107,10 +114,20 @@ const ProjectComp = ({ project }: IProjectCompProps) => {
         <div className={styles.goalContentBlock}>
           <p>{project?.projectGoal[locale]}</p>
         </div>
-        <div className={styles.goalImageBlock}>
+        <div
+          className={
+            project?.title === 'Connect'
+              ? styles.goalImageConnectBlock
+              : styles.goalImageBlock
+          }
+        >
           <Image
             src={project?.images?.goalImage}
-            style={{ borderRadius: '30px' }}
+            className={
+              project?.title === 'Connect'
+                ? styles.goalImageConnect
+                : styles.goalImage
+            }
             alt={project?.title}
             width={project?.title === 'Connect' ? 300 : 1200}
             height={735}
@@ -124,12 +141,22 @@ const ProjectComp = ({ project }: IProjectCompProps) => {
         <div className={styles.solutionContentBlock}>
           <p>{project?.solution[locale]}</p>
         </div>
-        <div className={styles.solutionImageBlock}>
+        <div
+          className={
+            project?.title === 'Connect'
+              ? styles.solutionImageConnectBlock
+              : styles.solutionImageBlock
+          }
+        >
           <Image
             src={project?.images.solutionImage}
-            style={{ borderRadius: '30px' }}
-            alt={project?.title}
             width={project?.title === 'Connect' ? 300 : 1200}
+            className={
+              project?.title === 'Connect'
+                ? styles.solutionImageConnect
+                : styles.solutionImage
+            }
+            alt={project?.title}
             height={735}
           />
         </div>
@@ -138,5 +165,4 @@ const ProjectComp = ({ project }: IProjectCompProps) => {
     </div>
   );
 };
-
 export default ProjectComp;

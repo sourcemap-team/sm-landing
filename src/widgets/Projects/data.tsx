@@ -18,7 +18,7 @@ export type Project = {
   images: Images;
   tags: string[];
   projectGoal: Record<string, string>;
-  solution: Record<string, string>;
+  solution: Record<string, React.ReactNode>;
   comp?: JSX.Element;
 };
 
@@ -109,8 +109,29 @@ export const PROJECTS: Project[] = [
       ru: `Клиент обратился к нам с просьбой разработать мобильное приложение для однорангового (P2P) обмена.`,
     },
     solution: {
-      en: `After thorough analysis and presentation of several product implementation options, a faster and more cost-effective approach was chosen - Progressive Web App (PWA). PWA functions seamlessly across all mobile platforms and in any web environment. \n \n The MVP was launched within 3 months, and development of functionality continued as demand for P2P exchanges continued to grow.`,
-      ru: `После тщательного анализа и презентации нескольких вариантов внедрения продукта был выбран более быстрый и экономически эффективный подход — Progressive Web App (PWA). PWA бесперебойно работает на всех мобильных платформах и в любой веб-среде. MVP был запущен в течение 3 месяцев, а развитие функциональности продолжалось, поскольку спрос на P2P-биржи продолжал расти.`,
+      en: (
+        <>
+          After thorough analysis and presentation of several product
+          implementation options, a faster and more cost-effective approach was
+          chosen - Progressive Web App (PWA). PWA functions seamlessly across
+          all mobile platforms and in any web environment.
+          <br />
+          <br /> The MVP was launched within 3 months, and development of
+          functionality continued as demand for P2P exchanges continued to grow.
+        </>
+      ),
+      ru: (
+        <>
+          После тщательного анализа и презентации нескольких вариантов внедрения
+          продукта был выбран более быстрый и экономически эффективный подход —
+          Progressive Web App (PWA). PWA бесперебойно работает на всех мобильных
+          платформах и в любой веб-среде.
+          <br />
+          <br /> MVP был запущен в течение 3 месяцев, а развитие
+          функциональности продолжалось, поскольку спрос на P2P-биржи продолжал
+          расти.
+        </>
+      ),
     },
     comp: (
       <>
@@ -143,9 +164,29 @@ export const PROJECTS: Project[] = [
       ru: `Shortcast — сервис для создания видеозаметок, предназначенный для повышения продуктивности удаленной работы. Пользователи могут записывать видео со своего экрана и камеры, а затем делиться ими со своими коллегами. Клиент обратился к нам с задачей доработать сервис MVP для скорейшего выпуска бета-версии продукта. Нашей целью было эффективно и оперативно дополнить программу записи экрана гибкой административной панелью, позволяющей индексировать видео поисковыми системами.`,
     },
     solution: {
-      en: `After delving into and studying the project, the team proposed to the client to rewrite the backend part of the product in order to swiftly implement content administration and user management features, including subscriptions. The team updated the product and integrated the necessary functionality for launch within 1.5 months. \n \n The product comprises a web dashboard and a Chrome extension, which facilitates the recording of the user's screen and camera.`,
-      ru: `Углубившись и изучив проект, команда предложила клиенту переписать серверную часть продукта, чтобы оперативно реализовать функции администрирования контента и управления пользователями, включая подписки. Команда обновила продукт и интегрировала необходимый для запуска функционал за 1,5 месяца.\n\nПродукт включает в себя веб-панель и расширение Chrome, которое облегчает запись экрана и камеры пользователя.`,
+      en: (
+        <>
+          After thorough analysis and presentation of several product
+          implementation options, a faster and more cost-effective approach was
+          chosen - Progressive Web App (PWA). PWA functions seamlessly across
+          all mobile platforms and in any web environment. <br />
+          <br /> The MVP was launched within 3 months, and development of
+          functionality continued as demand for P2P exchanges continued to grow.
+        </>
+      ),
+      ru: (
+        <>
+          После тщательного анализа и презентации нескольких вариантов внедрения
+          продукта был выбран более быстрый и экономически эффективный подход —
+          Progressive Web App (PWA). PWA бесперебойно работает на всех мобильных
+          платформах и в любой веб-среде. <br />
+          <br /> MVP был запущен в течение 3 месяцев, а развитие
+          функциональности продолжалось, поскольку спрос на P2P-биржи продолжал
+          расти.
+        </>
+      ),
     },
+
     comp: <></>,
   },
   {
@@ -173,8 +214,29 @@ export const PROJECTS: Project[] = [
       ru: `Клиент обратился к нам с просьбой разработать мобильное приложение для однорангового (P2P) обмена.`,
     },
     solution: {
-      en: `After thorough analysis and presentation of several product implementation options, a faster and more cost-effective approach was chosen - Progressive Web App (PWA). PWA functions seamlessly across all mobile platforms and in any web environment. \n \n The MVP was launched within 3 months, and development of functionality continued as demand for P2P exchanges continued to grow.`,
-      ru: `После тщательного анализа и презентации нескольких вариантов внедрения продукта был выбран более быстрый и экономически эффективный подход — Progressive Web App (PWA). PWA бесперебойно работает на всех мобильных платформах и в любой веб-среде. MVP был запущен в течение 3 месяцев, а развитие функциональности продолжалось, поскольку спрос на P2P-биржи продолжал расти.`,
+      en: (
+        <>
+          After thorough analysis and presentation of several product
+          implementation options, a faster and more cost-effective approach was
+          chosen - Progressive Web App (PWA). PWA functions seamlessly across
+          all mobile platforms and in any web environment.
+          <br />
+          <br /> The MVP was launched within 3 months, and development of
+          functionality continued as demand for P2P exchanges continued to grow.
+        </>
+      ),
+      ru: (
+        <>
+          После тщательного анализа и презентации нескольких вариантов внедрения
+          продукта был выбран более быстрый и экономически эффективный подход —
+          Progressive Web App (PWA). PWA бесперебойно работает на всех мобильных
+          платформах и в любой веб-среде.
+          <br />
+          <br /> MVP был запущен в течение 3 месяцев, а развитие
+          функциональности продолжалось, поскольку спрос на P2P-биржи продолжал
+          расти.
+        </>
+      ),
     },
     comp: <></>,
   },
