@@ -28,6 +28,8 @@ SwiperCore.use([Pagination, Autoplay, Mousewheel, Navigation]);
 const ProjectComp = ({ project }: IProjectCompProps) => {
   const locale = useLocale();
 
+  const width = typeof window !== 'undefined' ? window.innerWidth : 0;
+
   return (
     <div className={styles.mainContainer}>
       <div className={styles.topBlock}>
@@ -41,28 +43,27 @@ const ProjectComp = ({ project }: IProjectCompProps) => {
               height={69}
             />
           </div>
-          <h3 className={styles.titleHeader}>{project?.title}</h3>
+          <h3
+            className={
+              project?.title === 'Invest Allocator'
+                ? styles.titleHeaderIA
+                : styles.titleHeader
+            }
+          >
+            {project?.title}
+          </h3>
         </div>
         <div className={styles.sliderContainer}>
           {project?.images?.sliderContent?.length > 1 ? (
             <Swiper
-              style={
-                project?.title === 'Invest Allocator'
-                  ? { marginTop: `80px` }
-                  : {}
-              }
               loop={false}
               className={styles.swiper}
               modules={[Navigation, Autoplay, Pagination, Mousewheel]}
-              slidesPerView={isMobile ? 1 : 1.37}
+              slidesPerView={width < 480 ? 1 : 1.37}
               spaceBetween={10}
               speed={2000}
               navigation
               mousewheel={true}
-              pagination={{
-                dynamicBullets: true,
-                clickable: true,
-              }}
               scrollbar={{ draggable: true }}
               autoplay={{
                 delay: 2000,
@@ -73,13 +74,14 @@ const ProjectComp = ({ project }: IProjectCompProps) => {
                 <SwiperSlide key={index}>
                   <div className={styles.swiperBlock}>
                     <Image
+                      style={
+                        project?.title === 'Connect'
+                          ? { border: 'none', borderRadius: '40px' }
+                          : {}
+                      }
                       src={image}
                       alt={project?.title}
                       className={styles.swiperSlide}
-                      style={{
-                        borderRadius: '30px',
-                        border: '0.5px solid grey',
-                      }}
                       width={897}
                       height={550}
                     />
@@ -88,19 +90,12 @@ const ProjectComp = ({ project }: IProjectCompProps) => {
               ))}
             </Swiper>
           ) : (
-            <div
-              className={
-                project?.title === 'Connect'
-                  ? styles.goalImageConnectBlock
-                  : styles.goalImageBlock
-              }
-            >
+            <div className={styles.goalImageBlock}>
               <Image
                 src={project?.images?.sliderContent[0]}
                 alt={project?.title}
-                width={project?.title === 'Connect' ? 900 : 1200}
-                height={550}
-                style={{ borderRadius: '30px' }}
+                width={1200}
+                height={project?.title === 'Connect' ? 735 : 550}
               />
             </div>
           )}
@@ -109,7 +104,7 @@ const ProjectComp = ({ project }: IProjectCompProps) => {
           <ul className={styles.tags}>
             {project?.tags?.map((tag) => (
               <li key={tag}>
-                <Tag>{tag}</Tag>
+                <Tag className={styles.tag}>{tag}</Tag>
               </li>
             ))}
           </ul>
@@ -121,24 +116,19 @@ const ProjectComp = ({ project }: IProjectCompProps) => {
           <h1 className={styles.goalHeader}>{textProjectGoal.get(locale)}</h1>
         </div>
         <div className={styles.goalContentBlock}>
-          <p>{project?.projectGoal[locale]}</p>
+          <p className={styles.goalContent}>{project?.projectGoal[locale]}</p>
         </div>
-        <div
-          className={
-            project?.title === 'Connect'
-              ? styles.goalImageConnectBlock
-              : styles.goalImageBlock
-          }
-        >
+        <div className={styles.goalImageBlock}>
           <Image
-            src={project?.images?.goalImage}
-            className={
+            style={
               project?.title === 'Connect'
-                ? styles.goalImageConnect
-                : styles.goalImage
+                ? { border: 'none', borderRadius: '40px' }
+                : {}
             }
+            src={project?.images?.goalImage}
+            className={styles.goalImage}
             alt={project?.title}
-            width={project?.title === 'Connect' ? 300 : 1200}
+            width={1200}
             height={735}
           />
         </div>
@@ -148,23 +138,18 @@ const ProjectComp = ({ project }: IProjectCompProps) => {
           <h1 className={styles.solutionHeader}>{textSolution.get(locale)}</h1>
         </div>
         <div className={styles.solutionContentBlock}>
-          <p>{project?.solution[locale]}</p>
+          <p className={styles.goalContent}>{project?.solution[locale]}</p>
         </div>
-        <div
-          className={
-            project?.title === 'Connect'
-              ? styles.solutionImageConnectBlock
-              : styles.solutionImageBlock
-          }
-        >
+        <div className={styles.solutionImageBlock}>
           <Image
-            src={project?.images.solutionImage}
-            width={project?.title === 'Connect' ? 300 : 1200}
-            className={
+            style={
               project?.title === 'Connect'
-                ? styles.solutionImageConnect
-                : styles.solutionImage
+                ? { border: 'none', borderRadius: '40px' }
+                : {}
             }
+            src={project?.images.solutionImage}
+            width={1200}
+            className={styles.solutionImage}
             alt={project?.title}
             height={735}
           />

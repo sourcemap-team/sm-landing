@@ -33,10 +33,11 @@ export const PROJECTS: Project[] = [
     date: '2023',
     images: {
       title: '/images/projects/Flowmapp/FlowMappMain.png',
-      logo: '/images/projects/Flowmapp/FlowmappLogo.png',
+      logo: '/images/projects/Flowmapp/FlowMappLogo.png',
       sliderContent: [
         '/images/projects/Flowmapp/SliderContent/Slide1.png',
         '/images/projects/Flowmapp/SliderContent/Slide2.png',
+        '/images/projects/Flowmapp/SliderContent/Slide3.png',
       ],
       goalImage: '/images/projects/Flowmapp/FlowMappGoal.png',
       solutionImage: '/images/projects/Flowmapp/FlowMappSolution.png',
@@ -46,25 +47,8 @@ export const PROJECTS: Project[] = [
       en: `The client come to me with a request to "help deploy the application
             to prod." The current version had numerous bugs, and features were
             taking an exceedingly long time to release, preventing the team from
-            going live for about a year.The client come to me with a request to
-            "help deploy the application to prod." The current version had
-            numerous bugs, and features were taking an exceedingly long time to
-            release, preventing the team from going live for about a year.The
-            client come to me with a request to "help deploy the application to
-            prod." The current version had numerous bugs, and features were
-            taking an exceedingly long time to release, preventing the team from
             going live for about a year.`,
-      ru: `Ко мне пришел клиент с просьбой «помочь развернуть приложение
-		чтобы подтолкнуть." Текущая версия содержала множество ошибок, а были
-		релиз занимает очень много времени, что не позволяет команде
-		будет жить около года.Клиент обратился ко мне с просьбой
-		"помогите развернуть приложение на прод." Текущая версия имела
-		многочисленные ошибки, а на разработку функций уходило очень много времени.
-		релиз, из-за чего команда не могла выйти в свет примерно на год.
-		ко мне пришел клиент с просьбой «помочь развернуть приложение на
-		prod." Текущая версия содержала множество ошибок, а функции были
-		релиз занимает очень много времени, что не позволяет команде
-		будет жить около года.`,
+      ru: `Клиент обратился ко мне с просьбой "помочь развернуть приложение на прод". Текущая версия имела множество ошибок, и на реализацию функций уходило невероятно много времени, что предотвращало запуск команды в продакшн в течение примерно года.`,
     },
     solution: {
       en: `I was joined the project, conducted an analysis of the existing
@@ -74,13 +58,7 @@ export const PROJECTS: Project[] = [
 		After successfully releasing the product, I spent the next six
 		months with my team rewriting and enhancing the client-side portion,
 		preparing for the release of version 3.`,
-      ru: `Я присоединился к проекту, провел анализ существующих
-		архитектура, которая оказалась достаточно сложной и запутанной.
-		Однако моим первоначальным приоритетом было внедрение продукта с
-		планирует позднее провести рефакторинг как внешнего, так и внутреннего компонентов.
-		После успешного выпуска продукта я потратил следующие шесть
-		месяцы, пока моя команда переписывала и улучшала клиентскую часть,
-		готовимся к выпуску версии 3.`,
+      ru: `Я присоединился к проекту и провел анализ существующей архитектуры, которая оказалась довольно запутанной и сложной. Однако мой первоначальный приоритет был вывод продукта на рынок, планируя позже рефакторинг как компонентов фронтенда, так и бэкенда. После успешного выпуска продукта я провел следующие шесть месяцев со своей командой, переписывая и улучшая клиентскую часть, готовясь к выпуску версии 3.`,
     },
     comp: (
       <>
@@ -99,7 +77,10 @@ export const PROJECTS: Project[] = [
     images: {
       title: '/images/projects/Connect/ConnectMain.png',
       logo: '/images/projects/Connect/ConnectLogo.png',
-      sliderContent: ['/images/projects/Connect/SliderContent/Slide1.png'],
+      sliderContent: [
+        '/images/projects/Connect/SliderContent/Slide1.png',
+        '/images/projects/Connect/SliderContent/Slide2.png',
+      ],
       goalImage: '/images/projects/Connect/ConnectGoal.png',
       solutionImage: '/images/projects/Connect/ConnectSolution.png',
     },
@@ -210,31 +191,25 @@ export const PROJECTS: Project[] = [
     },
     tags: ['Kotlin', 'Spring Boot', 'React', 'TypeScript'],
     projectGoal: {
-      en: `The client approached us with a request to develop a mobile application for peer-to-peer (P2P) exchanges.`,
-      ru: `Клиент обратился к нам с просьбой разработать мобильное приложение для однорангового (P2P) обмена.`,
+      en: `A service for tracking incoming and outgoing transactions for small businesses, the client approached with a well-thought-out business idea. The task is to develop a web-cabinet of the product, frontend and backend parts.`,
+      ru: `Сервис для учета входящих и исходящих транзакций для малого бизнеса, клиент обратился с хорошо проработанной бизнес идеей. Задача – разработать веб-кбинет продукта, фронтенд и бэкенд части.
+		`,
     },
     solution: {
       en: (
         <>
-          After thorough analysis and presentation of several product
-          implementation options, a faster and more cost-effective approach was
-          chosen - Progressive Web App (PWA). PWA functions seamlessly across
-          all mobile platforms and in any web environment.
-          <br />
-          <br /> The MVP was launched within 3 months, and development of
-          functionality continued as demand for P2P exchanges continued to grow.
+          In 5 months, we implemented an MVP and sent it to production for
+          further testing of product hypotheses. The personal cabinet works
+          quickly, retrieves data from the backend, and renders income and
+          expense charts, cash flow, and burn rate.
         </>
       ),
       ru: (
         <>
-          После тщательного анализа и презентации нескольких вариантов внедрения
-          продукта был выбран более быстрый и экономически эффективный подход —
-          Progressive Web App (PWA). PWA бесперебойно работает на всех мобильных
-          платформах и в любой веб-среде.
-          <br />
-          <br /> MVP был запущен в течение 3 месяцев, а развитие
-          функциональности продолжалось, поскольку спрос на P2P-биржи продолжал
-          расти.
+          За 5 месяцев реализовали mvp и отправили в прод для дальнейшего
+          тестирования продуктовых гипотез. Личный кабинет работает быстро,
+          забирает данные с бэкенда и отрисовывает графики доходов и расходов,
+          кэшфлоу и burn rate.
         </>
       ),
     },
