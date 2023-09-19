@@ -10,11 +10,9 @@ const ProjectPage = () => {
   const locale = useLocale();
   const titleProject = useRouter().query.project;
 
-  const filteredProjects = PROJECTS.filter(
+  const existProject = PROJECTS.find(
     (project) => project.title === titleProject
   );
-
-  const existProject = filteredProjects[0];
 
   const META: {
     [key: string]: Record<string, string>;
