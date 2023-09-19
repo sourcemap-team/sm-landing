@@ -75,9 +75,7 @@ const ProjectComp = ({ project }: IProjectCompProps) => {
                   <div className={styles.swiperBlock}>
                     <Image
                       style={
-                        project?.title === 'Connect'
-                          ? { border: 'none', borderRadius: '40px' }
-                          : {}
+                        project?.title === 'Connect' ? { border: 'none' } : {}
                       }
                       src={image}
                       alt={project?.title}
@@ -120,11 +118,7 @@ const ProjectComp = ({ project }: IProjectCompProps) => {
         </div>
         <div className={styles.goalImageBlock}>
           <Image
-            style={
-              project?.title === 'Connect'
-                ? { border: 'none', borderRadius: '40px' }
-                : {}
-            }
+            style={project?.title === 'Connect' ? { border: 'none' } : {}}
             src={project?.images?.goalImage}
             className={styles.goalImage}
             alt={project?.title}
@@ -142,11 +136,7 @@ const ProjectComp = ({ project }: IProjectCompProps) => {
         </div>
         <div className={styles.solutionImageBlock}>
           <Image
-            style={
-              project?.title === 'Connect'
-                ? { border: 'none', borderRadius: '40px' }
-                : {}
-            }
+            style={project?.title === 'Connect' ? { border: 'none' } : {}}
             src={project?.images.solutionImage}
             width={1200}
             className={styles.solutionImage}
