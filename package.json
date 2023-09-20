@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@mui/material": "^5.14.9",
     "@next/font": "^13.2.3",
     "@types/node": "18.14.6",
     "@types/react": "18.0.28",
@@ -21,7 +20,6 @@
     "next": "13.2.3",
     "next-i18next": "^13.2.2",
     "react": "18.2.0",
-    "react-device-detect": "^2.2.3",
     "react-dom": "18.2.0",
     "react-i18next": "^12.2.0",
     "sass": "^1.58.3",

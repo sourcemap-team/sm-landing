@@ -21,8 +21,7 @@ export type ProjectCardProps = {
 
 export const ProjectCard: FC<ProjectCardProps> = ({ project, className }) => {
   const locale = useLocale();
-  const { title } = project;
-//   console.log(project.images.title);
+  const { title, projectSlug } = project;
 
   return (
     <article className={className}>
@@ -31,9 +30,9 @@ export const ProjectCard: FC<ProjectCardProps> = ({ project, className }) => {
           <h3 className={styles.title}>
             {title} <span className={styles.date}>{project.date}</span>
           </h3>
-          <p className={styles.desc}>{project.about[locale]}</p>
+          <p className={styles.desc}>{project.description[locale]}</p>
           <Link
-            href={`/projects/${title}`}
+            href={`/projects/${projectSlug}`}
             rel="noreferrer"
             className={styles.link}
           >
@@ -51,11 +50,17 @@ export const ProjectCard: FC<ProjectCardProps> = ({ project, className }) => {
           </ul>
         </div>
         <div className={styles.imgWrap}>
-          <img
-            src={project?.images?.title}
-            alt={title}
-            className={styles.img}
-          />
+          <Link
+            href={`/projects/${projectSlug}`}
+            rel="noreferrer"
+            className={styles.link}
+          >
+            <img
+              src={project?.images?.title}
+              alt={title}
+              className={styles.img}
+            />
+          </Link>
         </div>
       </div>
     </article>

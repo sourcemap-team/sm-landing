@@ -1,8 +1,4 @@
-import React from 'react';
-import FlowMapp from './ProjectsComponents/FlowMapp/FlowMapp';
-import Connect from './ProjectsComponents/Connect/Connect';
-
-type Images = {
+type ProjectImage = {
   title: string;
   logo: string;
   sliderContent: string[];
@@ -12,20 +8,21 @@ type Images = {
 
 export type Project = {
   title: string;
-  about: Record<string, string>;
+  projectSlug: string;
+  description: Record<string, string>;
   link: string;
   date: string;
-  images: Images;
+  images: ProjectImage;
   tags: string[];
   projectGoal: Record<string, string>;
-  solution: Record<string, React.ReactNode>;
-  comp?: JSX.Element;
+  solution: Record<string, string>;
 };
 
 export const PROJECTS: Project[] = [
   {
     title: 'FlowMapp',
-    about: {
+    projectSlug: 'flowmapp',
+    description: {
       en: 'Frontend development of UX tool for web designers',
       ru: 'Разработка интерфейса UX-инструмента для веб-дизайнеров',
     },
@@ -60,15 +57,11 @@ export const PROJECTS: Project[] = [
 		preparing for the release of version 3.`,
       ru: `Я присоединился к проекту и провел анализ существующей архитектуры, которая оказалась довольно запутанной и сложной. Однако мой первоначальный приоритет был вывод продукта на рынок, планируя позже рефакторинг как компонентов фронтенда, так и бэкенда. После успешного выпуска продукта я провел следующие шесть месяцев со своей командой, переписывая и улучшая клиентскую часть, готовясь к выпуску версии 3.`,
     },
-    comp: (
-      <>
-        <FlowMapp />
-      </>
-    ),
   },
   {
     title: 'Connect',
-    about: {
+    projectSlug: 'connect',
+    description: {
       en: 'Frontend and backend development for Cryptocurrency exchanger',
       ru: 'Разработка интерфейса и бэкенда для криптовалютного обменника',
     },
@@ -90,39 +83,14 @@ export const PROJECTS: Project[] = [
       ru: `Клиент обратился к нам с просьбой разработать мобильное приложение для однорангового (P2P) обмена.`,
     },
     solution: {
-      en: (
-        <>
-          After thorough analysis and presentation of several product
-          implementation options, a faster and more cost-effective approach was
-          chosen - Progressive Web App (PWA). PWA functions seamlessly across
-          all mobile platforms and in any web environment.
-          <br />
-          <br /> The MVP was launched within 3 months, and development of
-          functionality continued as demand for P2P exchanges continued to grow.
-        </>
-      ),
-      ru: (
-        <>
-          После тщательного анализа и презентации нескольких вариантов внедрения
-          продукта был выбран более быстрый и экономически эффективный подход —
-          Progressive Web App (PWA). PWA бесперебойно работает на всех мобильных
-          платформах и в любой веб-среде.
-          <br />
-          <br /> MVP был запущен в течение 3 месяцев, а развитие
-          функциональности продолжалось, поскольку спрос на P2P-биржи продолжал
-          расти.
-        </>
-      ),
+      en: 'After thorough analysis and presentation of several product implementation options, a faster and more cost-effective approach was chosen - Progressive Web App (PWA). PWA functions seamlessly across all mobile platforms and in any web environment. The MVP was launched within 3 months, and development of functionality continued as demand for P2P exchanges continued to grow.',
+      ru: 'После тщательного анализа и презентации нескольких вариантов внедрения продукта был выбран более быстрый и экономически эффективный подход — Progressive Web App (PWA). PWA бесперебойно работает на всех мобильных платформах и в любой веб-среде. MVP был запущен в течение 3 месяцев, а развитие функциональности продолжалось, поскольку спрос на P2P-биржи продолжал расти.',
     },
-    comp: (
-      <>
-        <Connect />
-      </>
-    ),
   },
   {
     title: 'ShortCast',
-    about: {
+    projectSlug: 'shortcast',
+    description: {
       en: 'The complex development of all product components: Frontend, Backend, Devops, Chrome Extension',
       ru: 'Комплексная разработка всех компонентов продукта: Frontend, Backend, Devops, Chrome расширение',
     },
@@ -145,34 +113,29 @@ export const PROJECTS: Project[] = [
       ru: `Shortcast — сервис для создания видеозаметок, предназначенный для повышения продуктивности удаленной работы. Пользователи могут записывать видео со своего экрана и камеры, а затем делиться ими со своими коллегами. Клиент обратился к нам с задачей доработать сервис MVP для скорейшего выпуска бета-версии продукта. Нашей целью было эффективно и оперативно дополнить программу записи экрана гибкой административной панелью, позволяющей индексировать видео поисковыми системами.`,
     },
     solution: {
-      en: (
-        <>
-          After thorough analysis and presentation of several product
-          implementation options, a faster and more cost-effective approach was
-          chosen - Progressive Web App (PWA). PWA functions seamlessly across
-          all mobile platforms and in any web environment. <br />
-          <br /> The MVP was launched within 3 months, and development of
-          functionality continued as demand for P2P exchanges continued to grow.
-        </>
-      ),
-      ru: (
-        <>
-          После тщательного анализа и презентации нескольких вариантов внедрения
-          продукта был выбран более быстрый и экономически эффективный подход —
-          Progressive Web App (PWA). PWA бесперебойно работает на всех мобильных
-          платформах и в любой веб-среде. <br />
-          <br /> MVP был запущен в течение 3 месяцев, а развитие
-          функциональности продолжалось, поскольку спрос на P2P-биржи продолжал
-          расти.
-        </>
-      ),
+      en: `
+		  After thorough analysis and presentation of several product
+		  implementation options, a faster and more cost-effective approach was
+		  chosen - Progressive Web App (PWA). PWA functions seamlessly across
+		  all mobile platforms and in any web environment. <br /><br /> 
+		  The MVP was launched within 3 months, and development of
+		  functionality continued as demand for P2P exchanges continued to grow.
+		`,
+      ru: `
+		  После тщательного анализа и презентации нескольких вариантов внедрения
+		  продукта был выбран более быстрый и экономически эффективный подход —
+		  Progressive Web App (PWA). PWA бесперебойно работает на всех мобильных
+		  платформах и в любой веб-среде. <br /><br /> 
+		  MVP был запущен в течение 3 месяцев, а развитие
+		  функциональности продолжалось, поскольку спрос на P2P-биржи продолжал
+		  расти.
+		`,
     },
-
-    comp: <></>,
   },
   {
     title: 'Feexle',
-    about: {
+    projectSlug: 'feexle',
+    description: {
       en: 'Frontend and backend development of finance tracking app',
       ru: 'Разработка интерфейса и бэкенда приложения для отслеживания финансов',
     },
@@ -196,28 +159,24 @@ export const PROJECTS: Project[] = [
 		`,
     },
     solution: {
-      en: (
-        <>
-          In 5 months, we implemented an MVP and sent it to production for
-          further testing of product hypotheses. The personal cabinet works
-          quickly, retrieves data from the backend, and renders income and
-          expense charts, cash flow, and burn rate.
-        </>
-      ),
-      ru: (
-        <>
-          За 5 месяцев реализовали mvp и отправили в прод для дальнейшего
-          тестирования продуктовых гипотез. Личный кабинет работает быстро,
-          забирает данные с бэкенда и отрисовывает графики доходов и расходов,
-          кэшфлоу и burn rate.
-        </>
-      ),
+      en: `
+		  In 5 months, we implemented an MVP and sent it to production for
+		  further testing of product hypotheses. The personal cabinet works
+		  quickly, retrieves data from the backend, and renders income and
+		  expense charts, cash flow, and burn rate.
+		`,
+      ru: `
+		  За 5 месяцев реализовали mvp и отправили в прод для дальнейшего
+		  тестирования продуктовых гипотез. Личный кабинет работает быстро,
+		  забирает данные с бэкенда и отрисовывает графики доходов и расходов,
+		  кэшфлоу и burn rate.
+		`,
     },
-    comp: <></>,
   },
   {
     title: 'Invest Allocator',
-    about: {
+    projectSlug: 'invest-allocator',
+    description: {
       en: 'Development of Chrome Extension and frontend of web app for a fintech startup',
       ru: 'Разработка Chrome расширения и интерфейса веб-приложения для финтех-стартапа',
     },
@@ -244,6 +203,5 @@ export const PROJECTS: Project[] = [
       en: `As a result of the work, we successfully implemented a Chrome extension and a web dashboard featuring various graphs and diagrams optimized for both mobile and desktop resolutions.`,
       ru: `В результате работы мы успешно реализовали расширение Chrome и веб-панель с различными графиками и диаграммами, оптимизированными как для мобильных, так и для десктопных разрешений.`,
     },
-    comp: <></>,
   },
 ];

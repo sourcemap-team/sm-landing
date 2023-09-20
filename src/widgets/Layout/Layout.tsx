@@ -12,19 +12,8 @@ import {
   MobileMenu,
   Navigation,
 } from './components';
-import cx from 'classnames';
-import { useRouter } from 'next/router';
 
 export const Layout = ({ children }: PropsWithChildren) => {
-  const router = useRouter();
-  const path = router.asPath;
-
-  React.useEffect(() => {
-    if (path === '/projects') {
-      router.push('/#projects');
-    }
-  }, [path, router]);
-
   const [mobileMenuState, setMobileMenuState] = useState<{ open: boolean }>({
     open: false,
   });
