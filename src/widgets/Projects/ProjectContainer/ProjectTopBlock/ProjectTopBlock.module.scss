@@ -47,8 +47,16 @@
     font-size: 59px;
   }
 
+  @media screen and (max-width: 550px) {
+    font-size: 50px;
+  }
+
   @media screen and (max-width: 480px) {
     font-size: 35px;
+  }
+
+  @media screen and (max-width: 380px) {
+    font-size: 29px;
   }
 }
 
@@ -108,6 +116,10 @@
 
   @media screen and (max-width: 400px) {
     height: 220px;
+  }
+
+  @media screen and (max-width: 290px) {
+    height: 170px;
   }
 }
 
