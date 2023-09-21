@@ -5,7 +5,7 @@ import { Contact, Footer } from '@/widgets';
 import { PROJECTS } from '@/widgets/Projects/data';
 
 import ProjectContainer from '@/widgets/Projects/ProjectContainer/ProjectContainer';
-import ProjectHead from '@/widgets/Projects/ProjectContainer/ProjectHead';
+import ProjectHead from '@/widgets/Projects/ProjectContainer/ProjectHead/ProjectHead';
 import { ProjectPropsType } from '@/widgets/Projects/ProjectContainer/types';
 
 const ProjectPage: React.FC<ProjectPropsType> = ({ project }) => {

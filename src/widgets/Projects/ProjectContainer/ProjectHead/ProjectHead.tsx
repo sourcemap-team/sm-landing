@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 
 import { useLocale } from '@/shared/hooks';
-import { ProjectPropsType } from './types';
+import { ProjectPropsType } from '../types';
 
 const ProjectHead = ({ project }: ProjectPropsType) => {
   const locale = useLocale();
@@ -33,7 +33,9 @@ const ProjectHead = ({ project }: ProjectPropsType) => {
         <meta
           property="og:image"
           itemProp="image"
-          content="https://sourcemap.pro/images/share/share-image.jpeg"
+          content={`https://sourcemap.pro${
+            project.images.cover || '/images/share/share-image.jpeg'
+          }`}
         />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -41,7 +43,9 @@ const ProjectHead = ({ project }: ProjectPropsType) => {
         <meta name="twitter:site" content="@sourcemap.pro" />
         <meta
           name="twitter:image"
-          content="https://sourcemap.pro/images/share/share-image.jpeg"
+          content={`https://sourcemap.pro${
+            project.images.cover || '/images/share/share-image.jpeg'
+          }`}
         />
         <meta name="twitter:image:alt" content={META.title[locale]} />
 

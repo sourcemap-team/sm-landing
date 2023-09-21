@@ -1,5 +1,5 @@
 type ProjectImage = {
-  title: string;
+  cover: string;
   logo: string;
   sliderContent: string[];
   goalImage: string;
@@ -29,7 +29,7 @@ export const PROJECTS: Project[] = [
     link: 'https://app.flowmapp.com/login',
     date: '2023',
     images: {
-      title: '/images/projects/Flowmapp/FlowMappMain.png',
+      cover: '/images/projects/Flowmapp/FlowMappMain.png',
       logo: '/images/projects/Flowmapp/FlowMappLogo.png',
       sliderContent: [
         '/images/projects/Flowmapp/SliderContent/Slide1.png',
@@ -68,7 +68,7 @@ export const PROJECTS: Project[] = [
     link: 'https://connect.app/',
     date: '2023',
     images: {
-      title: '/images/projects/Connect/ConnectMain.png',
+      cover: '/images/projects/Connect/ConnectMain.png',
       logo: '/images/projects/Connect/ConnectLogo.png',
       sliderContent: [
         '/images/projects/Connect/SliderContent/Slide1.png',
@@ -97,7 +97,7 @@ export const PROJECTS: Project[] = [
     link: 'https://app.shortcast.io/signin',
     date: '2022',
     images: {
-      title: '/images/projects/ShortCast/ShortCastMain.png',
+      cover: '/images/projects/ShortCast/ShortCastMain.png',
       logo: '/images/projects/ShortCast/ShortCastLogo.png',
       sliderContent: [
         '/images/projects/ShortCast/SliderContent/Slide1.png',
@@ -117,7 +117,7 @@ export const PROJECTS: Project[] = [
 		  After thorough analysis and presentation of several product
 		  implementation options, a faster and more cost-effective approach was
 		  chosen - Progressive Web App (PWA). PWA functions seamlessly across
-		  all mobile platforms and in any web environment. <br /><br /> 
+		  all mobile platforms and in any web environment.
 		  The MVP was launched within 3 months, and development of
 		  functionality continued as demand for P2P exchanges continued to grow.
 		`,
@@ -125,7 +125,7 @@ export const PROJECTS: Project[] = [
 		  После тщательного анализа и презентации нескольких вариантов внедрения
 		  продукта был выбран более быстрый и экономически эффективный подход —
 		  Progressive Web App (PWA). PWA бесперебойно работает на всех мобильных
-		  платформах и в любой веб-среде. <br /><br /> 
+		  платформах и в любой веб-среде.
 		  MVP был запущен в течение 3 месяцев, а развитие
 		  функциональности продолжалось, поскольку спрос на P2P-биржи продолжал
 		  расти.
@@ -142,7 +142,7 @@ export const PROJECTS: Project[] = [
     link: 'https://app.feexle.com/sign-in',
     date: '2022',
     images: {
-      title: '/images/projects/Feexle/FeexleMain.png',
+      cover: '/images/projects/Feexle/FeexleMain.png',
       logo: '/images/projects/Feexle/FeexleLogo.png',
       sliderContent: [
         '/images/projects/Feexle/SliderContent/Slide1.png',
@@ -183,7 +183,7 @@ export const PROJECTS: Project[] = [
     link: 'https://app.investallocator.com/account/sign-in',
     date: '2021',
     images: {
-      title: '/images/projects/InvestAllocator/InvestAllocatorMain.png',
+      cover: '/images/projects/InvestAllocator/InvestAllocatorMain.png',
       logo: '/images/projects/InvestAllocator/InvestAllocatorLogo.png',
       sliderContent: [
         '/images/projects/InvestAllocator/SliderContent/Slide1.png',
