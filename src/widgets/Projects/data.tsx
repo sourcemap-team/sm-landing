@@ -29,15 +29,15 @@ export const PROJECTS: Project[] = [
     link: 'https://app.flowmapp.com/login',
     date: '2023',
     images: {
-      cover: '/images/projects/Flowmapp/FlowMappMain.png',
-      logo: '/images/projects/Flowmapp/FlowMappLogo.png',
+      cover: '/images/projects/FlowMapp/FlowMappMain.png',
+      logo: '/images/projects/FlowMapp/FlowMappLogo.png',
       sliderContent: [
-        '/images/projects/Flowmapp/SliderContent/Slide1.png',
-        '/images/projects/Flowmapp/SliderContent/Slide2.png',
-        '/images/projects/Flowmapp/SliderContent/Slide3.png',
+        '/images/projects/FlowMapp/SliderContent/Slide1.png',
+        '/images/projects/FlowMapp/SliderContent/Slide2.png',
+        '/images/projects/FlowMapp/SliderContent/Slide3.png',
       ],
-      goalImage: '/images/projects/Flowmapp/FlowMappGoal.png',
-      solutionImage: '/images/projects/Flowmapp/FlowMappSolution.png',
+      goalImage: '/images/projects/FlowMapp/FlowMappGoal.png',
+      solutionImage: '/images/projects/FlowMapp/FlowMappSolution.png',
     },
     tags: ['React', 'Webpack', 'CSS/SCSS', 'TypeScript'],
     projectGoal: {

@@ -51,6 +51,8 @@ const ProjectTopBlock = ({ project }: ProjectPropsType) => {
 
         <div className={styles.slider}>
           <Swiper
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
             loop={false}
             modules={[Navigation, Autoplay, Pagination, Mousewheel]}
             slidesPerView={

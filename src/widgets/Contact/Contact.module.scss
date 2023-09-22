@@ -15,7 +15,7 @@
 
 .title {
   max-width: 340px;
-  font-family: "PP Neue Machina", sans-serif;
+  font-family: 'PP Neue Machina', sans-serif;
   font-size: 64px;
   font-style: normal;
   font-weight: 400;
@@ -25,6 +25,11 @@
 
   @media screen and (max-width: $tablet) {
     max-width: 100%;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 40px;
+    letter-spacing: -0.5px;
   }
 }
 
@@ -109,4 +114,3 @@
     background: var(--primary);
   }
 }
-
