@@ -12,7 +12,6 @@ import {
   MobileMenu,
   Navigation,
 } from './components';
-import cx from 'classnames';
 
 export const Layout = ({ children }: PropsWithChildren) => {
   const [mobileMenuState, setMobileMenuState] = useState<{ open: boolean }>({

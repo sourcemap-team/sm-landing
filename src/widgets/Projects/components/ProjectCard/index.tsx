@@ -7,6 +7,7 @@ import { Tag } from '@/shared/ui';
 import { useLocale } from '@/shared/hooks';
 
 import { Project } from '../../data';
+import Link from 'next/link';
 
 const textMap = new Map([
   ['en', 'View result'],
@@ -20,19 +21,18 @@ export type ProjectCardProps = {
 
 export const ProjectCard: FC<ProjectCardProps> = ({ project, className }) => {
   const locale = useLocale();
-  const { title } = project;
+  const { title, projectSlug, images, description, date, tags } = project;
 
   return (
     <article className={className}>
       <div className={styles.wrap}>
         <div className={styles.info}>
           <h3 className={styles.title}>
-            {title} <span className={styles.date}>{project.date}</span>
+            {title} <span className={styles.date}>{date}</span>
           </h3>
-          <p className={styles.desc}>{project.about[locale]}</p>
-          <a
-            href={project.link}
-            target="_blank"
+          <p className={styles.desc}>{description[locale]}</p>
+          <Link
+            href={`/projects/${projectSlug}`}
             rel="noreferrer"
             className={styles.link}
           >
@@ -40,9 +40,9 @@ export const ProjectCard: FC<ProjectCardProps> = ({ project, className }) => {
               <img src="/icons/arrow-right.svg" alt="Arrow Right" />
             </button>
             <span className={styles.linkText}>{textMap.get(locale)}</span>
-          </a>
+          </Link>
           <ul className={styles.tags}>
-            {project.tags.map((t) => (
+            {tags.map((t) => (
               <li key={t}>
                 <Tag>{t}</Tag>
               </li>
@@ -50,7 +50,13 @@ export const ProjectCard: FC<ProjectCardProps> = ({ project, className }) => {
           </ul>
         </div>
         <div className={styles.imgWrap}>
-          <img src={project.img} alt={title} className={styles.img} />
+          <Link
+            href={`/projects/${projectSlug}`}
+            rel="noreferrer"
+            className={styles.link}
+          >
+            <img src={images.cover} alt={title} className={styles.img} />
+          </Link>
         </div>
       </div>
     </article>
