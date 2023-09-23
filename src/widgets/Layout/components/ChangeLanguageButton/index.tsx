@@ -27,9 +27,16 @@ export const ChangeLanguageButton: FC<ChangeLanguageButtonProps> = ({
   const changeLanguage: MouseEventHandler<HTMLButtonElement> = (e) => {
     e.preventDefault();
     if (currentLocale && locales?.includes(currentLocale)) {
-      const enLocale: string = defaultLocale || 'en';
-      push({ pathname, query }, pathname, {
-        locale: currentLocale === defaultLocale ? 'ru' : enLocale,
+      const localeToSet =
+        currentLocale === defaultLocale ? 'ru' : defaultLocale || 'en';
+      let newPath: string | null = null;
+
+      if (pathname.includes('/projects/')) {
+        newPath = `/projects/${query.project}`;
+      }
+
+      push({ pathname: newPath || pathname, query }, newPath || pathname, {
+        locale: localeToSet,
         scroll: false,
       });
     }
