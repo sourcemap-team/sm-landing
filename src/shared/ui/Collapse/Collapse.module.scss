@@ -65,12 +65,21 @@
 .title {
   font-family: "PP NeueMachina Inktrap", sans-serif;
   transition: 200ms ease-in-out;
+  white-space: nowrap;
 
   @media screen and (max-width: $tablet) {
     font-weight: 400;
     font-size: 20px;
     line-height: 27px;
     color: #000000;
+  }
+
+  @media screen and (max-width: 336px) {
+    font-size: 17px;
+  }
+
+  @media screen and (max-width: 290px) {
+    font-size: 15px;
   }
 }
 
